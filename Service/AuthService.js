@@ -1,61 +1,58 @@
-import Wine from "../Model/WineModel.js";
+import User from "../Model/UserModel.js";
+import bcrypt from "bcrypt";
+import genToken from "../Utils/Token.js";
 
-const wineService = {
-    getAll: async (sort, order) => {
-        try {
-            const wines = await Wine.find();
+const authService = {
 
-            if (sort) {
-                if (sort === "rating") {
-                    if (order) {
-                        if (order === "asc") {
-                            wines.sort((a, b) => a.rating - b.rating)
-                        }
-                        if (order === "desc") {
-                            wines.sort((a, b) => b.rating - a.rating)
-                        }
-                    }else{
-                        wines.sort((a,b) => a.rating - b.rating)
-                    }
-                }
-                if (sort === "sales") {
-                    if (order) {
-                        if (order === "asc") {
-                            wines.sort((a,b) => a.sales - b.sales)
-                        }
-                        if (order === "desc") {
-                            wines.sort((a,b) => b.sales - a.sales)
-                        }
-                    }else{
-                        wines.sort((a,b) => a.sales - b.sales)
-                    }
-                }
-            }
-            return wines
-        } catch (error) {
-            console.error(error);
-            throw new Error("Error retrieving wines.");
-        }
-    },
-
-    getById: async (wineId) => {
-        try {
-            const wine = await Wine.findById(wineId);
-            if (!wine) {
-                throw new Error("Wine not found.");
-            }
-            return wine;
-        } catch (error) {
-            console.error(error);
-            throw new Error("Error retrieving wine by ID.");
-        }
-    },
-
-    wineFilter: async (req,res) => {
-        const {sort, order} = req.query
-        const wineFilter = await wineService.wineFilter(sort, order)
-        
+  login: async (email, password) => {
+    try {
+      const authUser = await User.findOne({ email });
+console.log('authUser:', authUser);
+console.log("email1", email);
+console.log("password1", password);
+      if (!authUser) {
+        return { message: "User not found" };
+      }
+console.log("hash1");
+      if (bcrypt.compareSync(password, authUser.password)) {
+        console.log("hash1");
+        const token = genToken(authUser);
+        return { token: token, message: "login successful" };
+      } else {
+        return { message: "Wrong Email or Password" };
+      }
+    } catch (error) {
+      console.error(error);
     }
+  },
+
+  register: async (name, email, password, cnfPassword) => {
+    try {
+      if (!name || !email || !password || !cnfPassword) {
+        return { message: "All fields are required" };
+      }
+      if (password !== cnfPassword) {
+        return { error: "Passwords do not match" };
+      }
+      const userExist = await User.findOne({ email: email });
+      if (userExist) {
+        return { message: "user already exist" };
+      }
+      if (!userExist) {
+        const hashedPassword = bcrypt.hashSync(password, 10);
+        const user = new User({
+          name: name,
+          email: email,
+          password: hashedPassword,
+          isActive: true, // Set the isActive field to true
+        });
+        await user.save();
+      }
+      return { message: "user created successfuly" };
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 
-export default wineService;
+export default authService;
