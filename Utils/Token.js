@@ -3,16 +3,16 @@ import Jwt from "jsonwebtoken";
 const genToken = (user) => {
     const payload = {
         _id: user._id,
-        email: user._email
+        email: user.email
     };
     try {
         const token = Jwt.sign(payload, process.env.SECRET, {
             expiresIn: "5m"
-        })
-        return token
+        });
+        return token;
     } catch (error) {
         console.error(error);
     }
-}
+};
 
-export default genToken
+export default genToken;

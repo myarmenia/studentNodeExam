@@ -9,8 +9,8 @@ export const users = [
         address: "123 Main St, Exampleville, CA 12345"
     },
     {
-        name: "Jane Smith",
-        email: "jane.smith@example.com",
+        name: "name",
+        email: "email",
         password: bcrypt.hashSync("password2", 10),
         phoneNumber: "098-765-4321",
         address: "456 Elm St, Exampletown, NY 67890"
