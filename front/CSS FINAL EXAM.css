@@ -1,0 +1,1243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sonsie One", cursive;
+}
+
+.navburger {
+  display: none;
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 65px;
+  padding: 0 320px;
+  background: rgb(47, 46, 46);
+  z-index: 2;
+}
+
+.nav a {
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: rgb(109, 107, 107);
+  transition: color 0.4s ease 0s;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: url("https://static.wixstatic.com/media/11062b_40a304aeb9034bc187226c259aaa4ca3f000.jpg/v1/fill/w_1349,h_635,al_c,q_85,usm_0.33_1.00_0.00,enc_auto/11062b_40a304aeb9034bc187226c259aaa4ca3f000.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 1000px;
+}
+
+.logo {
+  margin: 120px 0;
+  height: 450px;
+}
+
+.logoLog {
+  background: url("autologo.png");
+  background-size: cover;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+}
+
+.logoTxt {
+  padding-top: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logoTxt a {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1em;
+  text-decoration: none;
+  color: white;
+  letter-spacing: -2px;
+}
+
+.logoDsc {
+  font-size: 18px;
+  letter-spacing: 5px;
+  color: white;
+}
+
+.socLog {
+  height: 50px;
+  margin: 50px 0;
+}
+
+.service {
+  background: url("https://static.wixstatic.com/media/1e47b2_cd5df08585b64f40a575e620ed3bf997.jpg/v1/fill/w_1313,h_650,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/1e47b2_cd5df08585b64f40a575e620ed3bf997.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  color: white;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  letter-spacing: 2px;
+  width: 100%;
+  height: 100px;
+  padding: 100px 0;
+}
+
+.brd {
+  border: 2px solid white;
+  width: 50px;
+  margin: 25px 649px;
+}
+
+.slots {
+  display: flex;
+  justify-content: center;
+}
+
+.slot {
+  width: 20%;
+}
+
+.sloName {
+  font-size: 20px;
+  padding: 15px 0;
+}
+
+.sloDesc {
+  font-size: 15px;
+  line-height: 25px;
+  padding: 10px 60px;
+}
+
+.works {
+  width: 100%;
+  height: 1000px;
+  text-align: center;
+}
+
+.workName {
+  height: 230px;
+}
+
+.wTitle {
+  font-size: 30px;
+  letter-spacing: 2px;
+  width: 100%;
+  padding-top: 80px;
+}
+
+.brd2 {
+  border: 2px solid;
+  width: 50px;
+  margin: 20px 647px;
+}
+
+.workDsc {
+  font-size: 19px;
+  letter-spacing: 3px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 800px;
+  padding: 94px 50px;
+}
+
+.pic1 {
+  background: url("https://static.wixstatic.com/media/67e4cbe4b87f4b92ab43143f736b883e.jpg/v1/fit/w_751,h_207,q_90/67e4cbe4b87f4b92ab43143f736b883e.jpg");
+  background-size: cover;
+  width: 410px;
+  height: 307px;
+}
+
+.picBox1 a {
+  text-decoration: none;
+  color: white;
+}
+
+.picTxt {
+  display: none;
+  position: absolute;
+  background: rgba(39, 37, 37, 0.712);
+  width: 410px;
+  height: 307px;
+}
+
+.Pname {
+  font-size: 25px;
+  padding-top: 70px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.Pdsc {
+  font-size: 15px;
+  text-align: center;
+  padding: 0 30px;
+}
+
+.picBox1:hover .picTxt {
+  display: block;
+}
+
+.pic2 {
+  background: url("https://static.wixstatic.com/media/68c56f_6a285744348e42fbb07b9cb93045b169~mv2.jpg/v1/fit/w_751,h_207,q_90/68c56f_6a285744348e42fbb07b9cb93045b169~mv2.jpg");
+  background-size: cover;
+  width: 410px;
+  height: 307px;
+}
+
+.picBox2 a {
+  text-decoration: none;
+  color: white;
+}
+
+.picBox2:hover .picTxt {
+  display: block;
+}
+
+.pic3 {
+  background: url("https://static.wixstatic.com/media/08edc153c8924cd98b40463aeae91206.jpg/v1/fit/w_1330,h_355,q_90/08edc153c8924cd98b40463aeae91206.jpg");
+  background-size: cover;
+  width: 410px;
+  height: 307px;
+}
+
+.picBox3 a {
+  text-decoration: none;
+  color: white;
+}
+
+.picBox3:hover .picTxt {
+  display: block;
+}
+
+.pic4 {
+  background: url("https://static.wixstatic.com/media/64104960642a4ba994096bbc0e2fe879.jpg/v1/fit/w_751,h_207,q_90/64104960642a4ba994096bbc0e2fe879.jpg");
+  background-size: cover;
+  width: 410px;
+  height: 307px;
+}
+
+.picBox4 a {
+  text-decoration: none;
+  color: white;
+}
+
+.picBox4:hover .picTxt {
+  display: block;
+}
+
+.pic5 {
+  background: url("https://static.wixstatic.com/media/628bb3a0f5914616bfe724922bab3f4d.jpg/v1/fit/w_751,h_207,q_90/628bb3a0f5914616bfe724922bab3f4d.jpg");
+  background-size: cover;
+  width: 410px;
+  height: 307px;
+}
+
+.picBox5 a {
+  text-decoration: none;
+  color: white;
+}
+
+.picBox5:hover .picTxt {
+  display: block;
+}
+
+.pic6 {
+  background: url("https://static.wixstatic.com/media/4a73c7141cc6490cbb517ae395f47c97.jpg/v1/fit/w_751,h_207,q_90/4a73c7141cc6490cbb517ae395f47c97.jpg");
+  background-size: cover;
+  width: 410px;
+  height: 307px;
+}
+
+.picBox6 a {
+  text-decoration: none;
+  color: white;
+}
+
+.picBox6:hover .picTxt {
+  display: block;
+}
+
+.aboutUs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://static.wixstatic.com/media/1e47b2_0d6c77b5ffd04c0e92f186a8193c3e3c.jpg/v1/fill/w_1281,h_1080,al_c,q_85,enc_auto/1e47b2_0d6c77b5ffd04c0e92f186a8193c3e3c.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+}
+
+.brd3 {
+  border: 2px solid;
+  width: 50px;
+  margin: 20px 245px;
+}
+
+.txtBox {
+  text-align: center;
+  width: 60%;
+  height: 500px;
+  padding: 0px 130px;
+  background: white;
+}
+
+.AUDsc {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.animastTARACQ {
+  width: 100%;
+  height: 500px;
+  background: url("https://static.wixstatic.com/media/9b6c7d_54033d6d82c24d8e9be8212d3a8febe6.jpg/v1/fill/w_1313,h_520,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9b6c7d_54033d6d82c24d8e9be8212d3a8febe6.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://static.wixstatic.com/media/1e47b2_0d6c77b5ffd04c0e92f186a8193c3e3c.jpg/v1/fill/w_1281,h_1080,al_c,q_85,enc_auto/1e47b2_0d6c77b5ffd04c0e92f186a8193c3e3c.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 1200px;
+}
+
+.formContainer {
+  width: 60%;
+  height: 800px;
+  background: white;
+}
+
+.car {
+  width: 288px;
+  height: 234px;
+}
+
+.cTitle {
+  font-size: 30px;
+  letter-spacing: 2px;
+  padding-top: 80px;
+  text-align: center;
+}
+
+.brd4 {
+  border: 2px solid;
+  width: 50px;
+  margin: 20px 375px;
+}
+
+.formBox {
+  display: flex;
+}
+
+.info {
+  width: 50%;
+  font-size: 15px;
+  padding: 15px 0;
+}
+
+.address {
+  padding: 25px 50px;
+}
+
+.address a {
+  text-decoration: none;
+  color: black;
+}
+
+.form {
+  width: 50%;
+  padding: 10px 50px;
+}
+
+.form input {
+  padding: 7px 15px;
+  width: 285px;
+  border: 1px solid;
+}
+
+.form input:hover {
+  border: 2px solid rgb(109, 107, 107);
+}
+
+.form textarea {
+  width: 285px;
+  height: 100px;
+  border: 1px solid;
+  margin: 15px 0;
+}
+
+.form textarea:hover {
+  border: 2px solid rgb(109, 107, 107);
+}
+
+.inpL {
+  padding: 15px 0;
+}
+
+.subbtn input {
+  border: none;
+  background: rgb(47, 46, 46);
+  color: white;
+  font-size: 18px;
+  font-family: cursive;
+}
+
+.subbtn input:hover {
+  background: rgb(109, 107, 107);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(47, 46, 46);
+  width: 100%;
+  height: 200px;
+  color: white;
+  font-size: 13px;
+}
+
+.footer img {
+  width: 30px;
+  height: 30px;
+}
+
+.socLog2 {
+  margin: 25px 0;
+}
+
+@media (min-width: 1500px) {
+  .nav a {
+    font-size: 25px;
+  }
+
+  .title {
+    font-size: 35px;
+    letter-spacing: 4px;
+  }
+
+  .brd {
+    margin: 25px 730px;
+  }
+
+  .sloName {
+    font-size: 25px;
+  }
+
+  .sloDesc {
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  .wTitle {
+    font-size: 35px;
+    letter-spacing: 4px;
+  }
+
+  .brd2 {
+    margin: 20px 716px;
+  }
+
+  .workDsc {
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+
+  .aboutUs {
+    height: 800px;
+  }
+
+  .txtBox {
+    height: 600px;
+  }
+
+  .brd3 {
+    margin: 20px 300px;
+  }
+
+  .AUDsc {
+    font-size: 23px;
+  }
+
+  .cTitle {
+    font-size: 35px;
+  }
+
+  .brd4 {
+    margin: 20px 420px;
+  }
+
+  .info {
+    font-size: 20px;
+  }
+
+  .inpL {
+    font-size: 20px;
+  }
+
+  .subbtn input {
+    font-size: 23px;
+  }
+
+  .footer {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .gallery {
+    padding: 94px 294px;
+  }
+}
+
+@media (min-width: 2228px) {
+  .gallery {
+    padding: 94px 498px;
+  }
+}
+
+@media (min-width: 2636px) {
+  .gallery {
+    padding: 94px 703px;
+  }
+}
+
+@media (min-width: 2780px) {
+  .mNav {
+    width: 100%;
+    height: 85px;
+    padding: 0 320px;
+    background: rgb(47, 46, 46);
+    z-index: 2;
+  }
+
+  .mNav a {
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .main {
+    width: 100%;
+    height: 1500px;
+  }
+
+  .logo {
+    margin: 120px 0;
+    height: 450px;
+  }
+
+  .logoLog {
+    width: 240px;
+    height: 240px;
+    margin: 0 345px;
+  }
+
+  .logoTxt {
+    padding-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .logoTxt a {
+    font-size: 120px;
+    font-weight: bold;
+    line-height: 1em;
+    text-decoration: none;
+    color: white;
+    letter-spacing: -2px;
+  }
+
+  .logoDsc {
+    font-size: 35px;
+    letter-spacing: 10px;
+    color: white;
+  }
+
+  .socLog {
+    height: 50px;
+    margin: 50px 0;
+  }
+
+  .socLog img {
+    width: 68px;
+    height: 68px;
+  }
+
+  .service {
+    width: 100%;
+    height: 1000px;
+    color: white;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 65px;
+    letter-spacing: 5px;
+    width: 100%;
+    height: 100px;
+    padding: 150px 0;
+  }
+
+  .brd {
+    border: 3px solid white;
+    width: 70px;
+    margin: 25px 1355px;
+  }
+
+  .slots {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slot {
+    width: 25%;
+  }
+
+  .slot img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .sloName {
+    font-size: 45px;
+    padding: 15px 0;
+  }
+
+  .sloDesc {
+    font-size: 30px;
+    line-height: 30px;
+    padding: 10px 160px;
+  }
+
+  .works {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .workName {
+    height: 230px;
+  }
+
+  .wTitle {
+    font-size: 65px;
+    letter-spacing: 5px;
+    width: 100%;
+    padding-top: 80px;
+  }
+
+  .brd2 {
+    border: 5px solid;
+    width: 70px;
+    margin: 20px 1355px;
+  }
+
+  .workDsc {
+    font-size: 33px;
+    letter-spacing: 5px;
+  }
+
+  .gallery {
+    width: 100%;
+    height: 1000px;
+    padding: 89px 165px;
+  }
+
+  .pic1 {
+    width: 615px;
+    height: 411px;
+  }
+
+  .picTxt {
+    width: 615px;
+    height: 411px;
+  }
+
+  .Pname {
+    font-size: 50px;
+    padding-top: 70px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+
+  .Pdsc {
+    font-size: 27px;
+    text-align: center;
+    padding: 0 30px;
+  }
+
+  .pic2 {
+    width: 615px;
+    height: 411px;
+  }
+
+  .pic3 {
+    width: 615px;
+    height: 411px;
+  }
+
+  .pic4 {
+    width: 615px;
+    height: 411px;
+  }
+
+  .pic5 {
+    width: 615px;
+    height: 411px;
+  }
+
+  .pic6 {
+    width: 615px;
+    height: 411px;
+  }
+
+  .aboutUs {
+    width: 100%;
+    height: 1000px;
+  }
+
+  .txtBox {
+    text-align: center;
+    width: 60%;
+    height: 800px;
+    padding: 0px 130px;
+    background: white;
+  }
+
+  .brd3 {
+    border: 3px solid;
+    width: 70px;
+    margin: 20px 665px;
+  }
+
+  .AUDsc {
+    font-size: 39px;
+  }
+
+  .animastTARACQ {
+    width: 100%;
+    height: 800px;
+  }
+
+  .contact {
+    width: 100%;
+    height: 1800px;
+  }
+  .car {
+    width: 525px;
+    height: 434px;
+  }
+
+  .car img {
+    width: 525px;
+    height: 434px;
+  }
+
+  .formContainer {
+    width: 60%;
+    height: 1230px;
+    background: white;
+  }
+
+  .cTitle {
+    font-size: 65px;
+    letter-spacing: 5px;
+    width: 100%;
+    padding-top: 80px;
+  }
+
+  .brd4 {
+    border: 5px solid;
+    width: 70px;
+    margin: 20px 810px;
+  }
+
+  .info {
+    width: 50%;
+    font-size: 30px;
+    padding: 15px 35px;
+  }
+
+  .address {
+    padding: 60px 50px;
+  }
+
+  .form {
+    width: 50%;
+    padding: 10px 50px;
+  }
+
+  .form input {
+    padding: 7px 15px;
+    width: 500px;
+    height: 60px;
+    border: 2px solid;
+  }
+
+  .form input:hover {
+    border: 3px solid rgb(109, 107, 107);
+  }
+
+  .form textarea {
+    width: 500px;
+    height: 200px;
+    border: 2px solid;
+    margin: 15px 0;
+  }
+
+  .form textarea:hover {
+    border: 2px solid rgb(109, 107, 107);
+  }
+
+  .inpL {
+    padding: 15px 0;
+    font-size: 35px;
+  }
+
+  .subbtn input {
+    border: none;
+    background: rgb(47, 46, 46);
+    color: white;
+    font-size: 35px;
+    font-family: cursive;
+    height: 75px;
+  }
+
+  .footer {
+    height: 300px;
+    font-size: 30px;
+  }
+
+  .footer img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 1330px) {
+  .works {
+    height: 1320px;
+  }
+  .nav {
+    padding: 0 197px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .AUDsc {
+    font-size: 16px;
+  }
+  .form {
+    padding: 10px 0px;
+  }
+}
+
+@media (max-width: 1010px) {
+  .nav a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 985px) {
+  .nav {
+    padding: 0 197px;
+  }
+  .sloDesc {
+    padding: 10px 0;
+  }
+  .txtBox {
+    padding: 0 5px;
+  }
+  .AUDsc {
+    font-size: 16px;
+  }
+  .form {
+    padding: 10px 0px;
+  }
+  .form input {
+    width: 215px;
+  }
+  .form textarea {
+    width: 215px;
+  }
+}
+
+@media (max-width: 919px) {
+  .works {
+    height: 2250px;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav {
+    display: none;
+  }
+
+  .navburger {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: inherit;
+  }
+
+  #toggle {
+    display: none;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    z-index: 1;
+  }
+
+  .hamburger div {
+    width: 7vw;
+    height: 7px;
+    margin: 8px 0;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 7px 1px rgba(47, 46, 46, 0.719);
+    border-radius: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navA {
+    position: absolute;
+    background: rgba(39, 37, 37, 0.904);
+    width: 100%;
+    height: 100%;
+    transition: all 0.45s ease-in-out;
+    transform: translate(1000px);
+  }
+
+  .navBox {
+    text-align: center;
+  }
+
+  .navBox a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 25px 0;
+    color: white;
+    border-bottom: 1px solid;
+  }
+
+  .socLog-ham {
+    display: flex;
+    justify-content: center;
+    padding: 35px 0;
+  }
+
+  .socLog-ham a {
+    width: 4em;
+  }
+
+  .navA a:hover {
+    color: rgb(109, 107, 107);
+    transition: color 0.4s ease 0s;
+  }
+
+  #toggle:checked + .hamburger .top {
+    transform: rotate(45deg);
+    margin-top: 25px;
+  }
+
+  #toggle:checked + .hamburger .bottom {
+    transform: rotate(-45deg);
+    opacity: 0;
+  }
+
+  #toggle:checked + .hamburger .meat {
+    transform: rotate(-45deg);
+    margin-top: -14px;
+  }
+
+  #toggle:checked + .hamburger + .navA {
+    transform: translate(0);
+  }
+
+  .socLog {
+    display: none;
+  }
+
+  .main {
+    height: 750px;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+
+  .brd {
+    margin: 10px 365px;
+  }
+
+  .service {
+    height: 1250px;
+  }
+
+  .wTitle {
+    font-size: 40px;
+  }
+
+  .brd2 {
+    margin: 20px 365px;
+  }
+
+  .slots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slot {
+    width: 30%;
+  }
+
+  .slot img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .sloName {
+    font-size: 30px;
+  }
+
+  .sloDesc {
+    font-size: 20px;
+  }
+
+  .txtBox {
+    width: 70%;
+  }
+
+  .contact {
+    height: 1000px;
+  }
+
+  .formContainer {
+    width: 80%;
+    height: 670px;
+  }
+
+  .cTitle {
+    font-size: 45px;
+    padding-top: 45px;
+  }
+
+  .brd4 {
+    border: 2px solid;
+    width: 45px;
+    margin: 20px 290px;
+  }
+
+  .info {
+    width: 50%;
+    font-size: 30px;
+    padding: 15px 35px;
+  }
+
+  .address {
+    font-size: 17px;
+    padding: 5px 0;
+  }
+
+  .form {
+    width: 50%;
+    padding: 5px 10px;
+  }
+
+  .form input {
+    padding: 0px 15px;
+    width: 240px;
+    height: 35px;
+    border: 2px solid;
+  }
+
+  .form input:hover {
+    border: 3px solid rgb(109, 107, 107);
+  }
+
+  .form textarea {
+    width: 240px;
+    height: 100px;
+    border: 2px solid;
+    margin: 5px 0;
+  }
+
+  .form textarea:hover {
+    border: 2px solid rgb(109, 107, 107);
+  }
+
+  .inpL {
+    padding: 5px 0;
+    font-size: 18px;
+  }
+
+  .subbtn input {
+    font-size: 20px;
+    height: 40px;
+  }
+
+  .footer {
+    height: 160px;
+  }
+}
+
+@media (max-width: 680px) {
+  .service {
+    height: 1300px;
+  }
+
+  .address {
+    font-size: 15px;
+  }
+
+  .form input {
+    width: 200px;
+    height: 30px;
+  }
+
+  .inpL {
+    font-size: 15px;
+  }
+
+  .form textarea {
+    width: 200px;
+  }
+
+  .form input:hover {
+    border: 3px solid rgb(109, 107, 107);
+  }
+  .form textarea:hover {
+    border: 2px solid rgb(109, 107, 107);
+  }
+}
+
+@media (max-width: 550px) {
+  .info {
+    padding: 15px 5px;
+  }
+  .form input {
+    width: 150px;
+  }
+  .form textarea {
+    width: 150px;
+  }
+}
+
+@media (max-width: 505px) {
+  .slot {
+    width: 100%;
+  }
+  .service {
+    height: 1370px;
+  }
+  .txtBox {
+    height: 600px;
+  }
+  .gallery {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 410px) {
+  .works {
+    height: 1700px;
+  }
+
+  .pic1,
+  .pic2,
+  .pic3,
+  .pic4,
+  .pic5,
+  .pic6 {
+    width: 320px;
+    height: 217px;
+  }
+
+  .contact {
+    height: 1400px;
+  }
+
+  .formContainer {
+    height: auto;
+  }
+
+  .formBox {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 7px;
+  }
+
+  .footTxt {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .txtBox {
+    height: 650px;
+  }
+}
+
+@media (max-width: 342px) {
+  .aboutUs {
+    height: 800px;
+  }
+  .txtBox {
+    height: 700px;
+  }
+}
+
+@media (max-width: 323px) {
+  .footTxt {
+    font-size: 9px;
+  }
+}
