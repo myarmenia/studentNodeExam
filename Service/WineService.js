@@ -1,61 +1,49 @@
 import Wine from "../Model/WineModel.js";
 
 const wineService = {
-    getAll: async (sort, order) => {
-        try {
-            const wines = await Wine.find();
+    getAll: async (sort) => {
+        let wines = await Wine.find()
 
-            if (sort) {
-                if (sort === "rating") {
-                    if (order) {
-                        if (order === "asc") {
-                            wines.sort((a, b) => a.rating - b.rating)
-                        }
-                        if (order === "desc") {
-                            wines.sort((a, b) => b.rating - a.rating)
-                        }
-                    }else{
-                        wines.sort((a,b) => a.rating - b.rating)
-                    }
-                }
-                if (sort === "sales") {
-                    if (order) {
-                        if (order === "asc") {
-                            wines.sort((a,b) => a.sales - b.sales)
-                        }
-                        if (order === "desc") {
-                            wines.sort((a,b) => b.sales - a.sales)
-                        }
-                    }else{
-                        wines.sort((a,b) => a.sales - b.sales)
-                    }
-                }
-            }
-            return wines
-        } catch (error) {
-            console.error(error);
-            throw new Error("Error retrieving wines.");
+        if (sort === "ratingAndOffers") {
+            wines = wines.filter((wine) => wine.rating >= 3 && wine.sales >= 5)
         }
+        
+        return wines
     },
-
-    getById: async (wineId) => {
+    getById: async (wineId, sort) => {
         try {
-            const wine = await Wine.findById(wineId);
-            if (!wine) {
+            const wineById = await Wine.findById(wineId);
+            if (!wineById) {
                 throw new Error("Wine not found.");
             }
-            return wine;
+    
+            let wines = await Wine.find({ type: wineById.type });
+    
+            return { wines, wineById };
         } catch (error) {
             console.error(error);
             throw new Error("Error retrieving wine by ID.");
         }
     },
+    
+    
 
-    wineFilter: async (req,res) => {
-        const {sort, order} = req.query
-        const wineFilter = await wineService.wineFilter(sort, order)
-        
+    filterWines: async (types, brands) => {
+        try {
+            let query = {};
+            if (types && types.length > 0) {
+                query.type = { $in: types };
+            }
+            if (brands && brands.length > 0) {
+                query.brand = { $in: brands };
+            }
+            const wines = await Wine.find(query);
+            return wines;
+        } catch (error) {
+            console.error(error);
+            throw new Error("Error during wine filtering");
+        }
     }
 };
 
-export default wineService;
+export default wineService

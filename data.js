@@ -82,7 +82,7 @@ export const wines = [
         alcohol: "55%",
         price: 9.52,
         sales: 10,
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.\nSuspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.nSuspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.",
     },
     {
         brand: "Armenia",
@@ -140,7 +140,6 @@ export const wines = [
         name: "white wine",
         type: "dry",
         color: "white",
-
         img: "/images/tushpa_white_wine.png",
         rating: 5,
         stock: 10,

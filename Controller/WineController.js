@@ -1,23 +1,26 @@
+import Wine from "../Model/WineModel.js";
 import wineService from "../Service/WineService.js"
 
 const wineController = {
   getAll: async (req, res) => {
     try {
-      const { sort, order } = req.query
-      const getAllWines = await wineService.getAll(sort, order);
-      res.status(200).json(getAllWines);
+      const { sort } = req.query
+      const wines = await wineService.getAll( sort )
+      res.status(201).send(wines)
     } catch (error) {
       console.error(error);
-      console.error("______________");
-      console.error("Error During GetAll API Request");
-      res.status(500).json({ CriticalError: "Internal Server Error" });
+      res.status(500).send({ CriticalError: "Internal Server Error" })
     }
-  },
+},
+
+
+
 
   getById: async (req, res) => {
     try {
+      const { sort } = req.body
       const { wineId } = req.body
-      const getWineById = await wineService.getById(wineId)
+      const getWineById = await wineService.getById(wineId, sort)
       res.status(201).json(getWineById)
     } catch (error) {
       console.error(error);
@@ -27,9 +30,18 @@ const wineController = {
     }
   },
 
-  wineFilter: async (req,res) => {
-    const {sort, order } =req
-  }
+  wineFilter: async (req, res) => {
+    try {
+        const types = req.query.types ? req.query.types.split(',') : [];
+        const brands = req.query.brands ? req.query.brands.split(',') : [];
+        const wines = await wineService.filterWines(types, brands);
+        res.status(200).send(wines);
+    } catch (error) {
+        console.error(error);
+        console.error("______________");
+        res.status(500).send({ error: "Internal Server Error" });
+    }
+}
 
 }
 export default wineController
