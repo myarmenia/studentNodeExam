@@ -10,6 +10,7 @@ import corsOptions from "./Config/CorsOptions.js";
 import seedRouter from "./Router/SeedRouter.js";
 import authRouter from "./Router/AuthRouter.js"; 
 import wineRouter from "./Router/WineRouter.js"; 
+import cartRouter from "./Router/CartRouter.js";
 
 const app = express();
 dotenv.config(); 
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use("/api/seed", seedRouter); 
 app.use("/api/auth", authRouter); 
 app.use("/api/wine", wineRouter); 
+app.use("api/cart",  cartRouter);
 
 const PORT = process.env.PORT; 
 app.listen(PORT, () => {
