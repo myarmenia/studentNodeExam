@@ -12,14 +12,15 @@ const cartController = {
         }
       },
       
-       addToCart : async (req, res, next) => {
+       addToCart : async (req, res) => {
         try {
-          const userId = req.user.id;
+          const { userId } = req.body;
           const { wineId, count } = req.body;
           const cart = await cartService.addToCart(userId, wineId, count);
-          res.json(cart);
+          res.status(201).json(cart);
         } catch (error) {
-          next(error);
+          console.error(error)
+          res.status(500).json({ CriticalError: "Internal Server Error"})
         }
       },
       
