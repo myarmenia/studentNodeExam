@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML EXAM</title>
+  </head>
+  <body bgcolor="black" style="color: white">
+    <header class="header">
+      <center>
+        <h1 class="title">Steve Jobs</h1>
+        <p class="description">1955-2011</p>
+      </center>
+    </header>
+    <section class="tribute">
+      <center>
+        <blockquote>
+          "Design is not just what it looks like and feels like. Design is how
+          it works"
+        </blockquote>
+      </center>
+      <hr />
+      <center>
+        <img
+          width="500px"
+          height="500px"
+          src="https://cdn.profoto.com/cdn/053149e/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-original.jpg?width=1280&quality=75&format=jpg"
+        />
+      </center>
+      <hr />
+    </section>
+
+    <section class="bio">
+      <center>
+        <h2><strong> Biography </strong></h2>
+        <p style="width: 50%">
+          Steven Paul Jobs (February 24, 1955 – October 5, 2011) was an American
+          entrepreneur, industrial designer, business magnate, media proprietor,
+          and investor. He was the co-founder, chairman, and CEO of Apple; the
+          chairman and majority shareholder of Pixar; a member of The Walt
+          Disney Company's board of directors following its acquisition of
+          Pixar; and the founder, chairman, and CEO of NeXT. He is widely
+          recognized as a pioneer of the personal computer revolution of the
+          1970s and 1980s, along with his early business partner and fellow
+          Apple co-founder Steve Wozniak.
+        </p>
+        <hr />
+      </center>
+    </section>
+    <section id="tables">
+      <center>
+        <h2>Tables</h2>
+        <hr />
+        <table border="1" width="500" height="500">
+          <tr>
+            <td rowspan="2"></td>
+            <td></td>
+            <td colspan="3"></td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td rowspan="3"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td rowspan="2"></td>
+            <td></td>
+            <td rowspan="3"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td rowspan="2"></td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td></td>
+          </tr>
+        </table>
+      </center>
+    </section>
+
+    <section id="lists">
+      <center>
+        <hr />
+        <h2>Lists</h2>
+        <hr />
+      </center>
+      <ol>
+        <li>First item</li>
+        <li>
+          Second item
+          <ul>
+            <li>Subitem 1</li>
+            <li>Subitem 2</li>
+            <li>
+              Subitem 3
+              <ol>
+                <li>Sub-subitem A</li>
+                <li>Sub-subitem B</li>
+                <li>Sub-subitem C</li>
+              </ol>
+            </li>
+            <li>Subitem 4</li>
+          </ul>
+        </li>
+        <li>Third item</li>
+      </ol>
+
+      <ul>
+        <li>Unordered item 1</li>
+        <li>
+          Unordered item 2
+          <ul>
+            <li>Unordered subitem A</li>
+            <li>Unordered subitem B</li>
+            <li>
+              Unordered subitem C
+              <ul>
+                <li>Unordered sub-subitem X</li>
+                <li>Unordered sub-subitem Y</li>
+                <li>Unordered sub-subitem Z</li>
+              </ul>
+            </li>
+            <li>Unordered subitem D</li>
+          </ul>
+        </li>
+        <li>Unordered item 3</li>
+      </ul>
+    </section>
+
+    <section>
+      <center>
+        <h1>Form</h1>
+        <hr />
+
+        <form>
+          <h3>Customer Name</h3>
+          <input required placeholder="First Name" />
+          <input required placeholder="Last Name" />
+
+          <h3 class="field-head">Address</h3>
+
+          <input required />
+          <br />
+          Street Address
+          <br />
+          <input required />
+          <br />
+          Street Address Line 2
+          <br />
+
+          <input required />
+          <br />
+          City
+          <br />
+          <input required />
+          <br />
+          State
+          <br />
+          <input required />
+          <br />
+          Zip
+          <br /><br />
+          <select name="country" required>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Bahrain">Bahrain</option>
+            <option value="Cameroon">Cameroon</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Egypt">Egypt</option>
+            <option value="Finland">Finland</option>
+            <option value="Gabon">Gabon</option>
+            <option value="Kuwait">Kuwait</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="Malta">Malta</option>
+            <option value="Norfolk Island">Norfolk Island</option>
+          </select>
+          <br />
+          Select Country
+          <br /><br />
+          <h3>Contact</h3>
+          <input required />
+          <br />
+          Phone
+          <br />
+          <input required />
+          <br />
+          Email
+          <br />
+          <br />
+          <h3 class="field-head">Personal Details</h3>
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label>
+          <input type="radio" id="other" name="gender" value="other" />
+          <label for="other">Other</label>
+          <br />
+          <h3 class="field-head">Ratings</h3>
+          <h5>Rating 1:</h5>
+          <input type="radio" name="rating1" />
+          <label for="bad">Bad</label>
+          <input type="radio" name="rating1" />
+          <label for="good">Good</label>
+          <input type="radio" name="rating1" value="other" />
+          <label for="excelent">Excelent</label><br />
+
+          <h5>Rating 2:</h5>
+          <input type="radio" name="rating2" />
+          <label for="bad2">Bad</label>
+          <input type="radio" name="rating2" />
+          <label for="good2">Good</label>
+          <input type="radio" name="rating2" />
+          <label for="excelent2">Excelent</label><br />
+
+          <h5>Rating 3 :</h5>
+          <input type="radio" name="rating3" />
+          <label for="bad3">Bad</label>
+          <input type="radio" name="rating3" />
+          <label for="good3">Good</label>
+          <input type="radio" name="rating3" />
+          <label for="excelent3">Excelent</label><br />
+
+          <h5>Rating 4:</h5>
+          <input type="radio" name="rating4" />
+          <label for="bad">Bad</label>
+          <input type="radio" name="rating4" />
+          <label for="good4">Good</label>
+          <input type="radio" name="rating4" />
+          <label for="excelent4">Excelent</label><br />
+
+          <h5>Rating 5:</h5>
+          <input type="radio" name="rating5" />
+          <label for="bad">Bad</label>
+          <input type="radio" name="rating5" />
+          <label for="good5">Good</label>
+          <input type="radio" name="rating5" />
+          <label for="excelent5">Excelent</label><br />
+          <button type="submit">Submit</button>
+        </form>
+      </center>
+    </section>
+  </body>
+</html>
