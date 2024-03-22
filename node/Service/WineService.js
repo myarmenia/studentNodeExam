@@ -2,35 +2,34 @@ import Wine from "../Model/WineModel.js";
 
 const wineService = {
     getAll: async (sort) => {
-        let wines = await Wine.find()
+        const wines = await Wine.find()
 
         if (sort === "ratingAndOffers") {
             wines = wines.filter((wine) => wine.rating >= 3 && wine.sales >= 5)
         }
-        
+
         return wines
     },
     getById: async (wineId, sort) => {
         try {
             const wineById = await Wine.findById(wineId);
             if (!wineById) {
-                throw new Error("Wine not found.");
+               return ("Wine not found");
             }
-    
-            let wines = await Wine.find({ type: wineById.type });
-    
+
+            const wines = await Wine.find({ type: wineById.type });
+
             return { wines, wineById };
         } catch (error) {
             console.error(error);
-            throw new Error("Error retrieving wine by ID.");
         }
     },
-    
-    
+
+
 
     filterWines: async (types, brands) => {
         try {
-            let query = {};
+            const query = {};
             if (types && types.length > 0) {
                 query.type = { $in: types };
             }
@@ -41,7 +40,6 @@ const wineService = {
             return wines;
         } catch (error) {
             console.error(error);
-            throw new Error("Error during wine filtering");
         }
     }
 };
