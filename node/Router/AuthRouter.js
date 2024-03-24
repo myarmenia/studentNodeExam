@@ -1,7 +1,7 @@
 import { Router } from "express";
 import authController from "../Controller/AuthController.js";
 
-const authRouter = Router()
+const authRouter = Router();
 
 /**
  * @swagger
@@ -36,7 +36,7 @@ const authRouter = Router()
  *         description: Internal server error
  */
 
-authRouter.post("/register", authController.register)
+authRouter.post("/register", authController.register);
 
 /**
  * @swagger
@@ -123,6 +123,6 @@ authRouter.post("/refresh", authController.refresh);
  *         description: Internal server error
  */
 
-authRouter.post("/logout", authController.logOut)
+authRouter.post("/logout", authController.logOut);
 
-export default authRouter
+export default authRouter;

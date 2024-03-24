@@ -1,8 +1,8 @@
-import { Router } from 'express';
-import cartController from '../Controller/CartController.js';
-import isAuth from "../Middleware/IsAuth.js"
+import { Router } from "express";
+import cartController from "../Controller/CartController.js";
+import isAuth from "../Middleware/IsAuth.js";
 
-const cartRouter = Router()
+const cartRouter = Router();
 
 /**
  * @swagger
@@ -18,7 +18,7 @@ const cartRouter = Router()
  *     summary: Get all cart items
  *     security:
  *       - bearerAuth: []
- *     tags: 
+ *     tags:
  *       - Cart
  *     responses:
  *       200:
@@ -33,8 +33,7 @@ const cartRouter = Router()
  *         description: Internal server error
  */
 
-
-cartRouter.get('/', isAuth, cartController.getCart);
+cartRouter.get("/", isAuth, cartController.getCart);
 
 /**
  * @swagger
@@ -63,15 +62,14 @@ cartRouter.get('/', isAuth, cartController.getCart);
  *          description: Internal server error
  */
 
-
-cartRouter.post('/add', isAuth, cartController.addToCart);
+cartRouter.post("/add", isAuth, cartController.addToCart);
 
 /**
  * @swagger
  *  /api/cart/updateCart:
  *    put:
  *      summary: Change count of the cart item
- *      tags: 
+ *      tags:
  *        - Cart
  *      security:
  *        - bearerAuth: []
@@ -94,16 +92,14 @@ cartRouter.post('/add', isAuth, cartController.addToCart);
  *          description: Internal server error
  */
 
-
-
-cartRouter.put('/update', isAuth, cartController.updateCart);
+cartRouter.put("/update", isAuth, cartController.updateCart);
 
 /**
  * @swagger
  * /api/cart/removeFromCart:
  *   delete:
  *     summary: Delete item from cart
- *     tags: 
+ *     tags:
  *       - Cart
  *     security:
  *       - bearerAuth: []
@@ -126,7 +122,6 @@ cartRouter.put('/update', isAuth, cartController.updateCart);
  *         description: Internal server error
  */
 
+cartRouter.delete("/remove", isAuth, cartController.removeFromCart);
 
-cartRouter.delete('/remove', isAuth, cartController.removeFromCart)
-
-export default cartRouter
+export default cartRouter;
