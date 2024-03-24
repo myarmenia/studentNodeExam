@@ -1,7 +1,7 @@
 import { Router } from "express";
-import wineController from '../Controller/WineController.js'
+import wineController from "../Controller/WineController.js";
 import isAuth from "../Middleware/IsAuth.js";
-const wineRouter = Router()
+const wineRouter = Router();
 
 /**
  * @swagger
@@ -17,7 +17,7 @@ const wineRouter = Router()
  *     summary: Get all Wines
  *     security:
  *       - bearerAuth: []
- *     tags: 
+ *     tags:
  *       - Wines
  *     parameters:
  *       - in: query
@@ -39,7 +39,7 @@ const wineRouter = Router()
  *               $ref: "#/components/schemas/Wine"
  */
 
-wineRouter.get("/", wineController.getAll)
+wineRouter.get("/", wineController.getAll);
 
 /**
  * @swagger
@@ -48,7 +48,7 @@ wineRouter.get("/", wineController.getAll)
  *     summary: Get Wine by Id
  *     security:
  *       - bearerAuth: []
- *     tags: 
+ *     tags:
  *       - Wines
  *     parameters:
  *       - in: query
@@ -65,7 +65,7 @@ wineRouter.get("/", wineController.getAll)
  *               $ref: "#/components/schemas/Wine"
  */
 
-wineRouter.get("/getbyid", isAuth, wineController.getById)
+wineRouter.get("/getbyid", isAuth, wineController.getById);
 
 /**
  * @swagger
@@ -74,7 +74,7 @@ wineRouter.get("/getbyid", isAuth, wineController.getById)
  *     summary: Get Wines Based on filter
  *     security:
  *       - bearerAuth: []
- *     tags: 
+ *     tags:
  *       - Wines
  *     parameters:
  *       - in: query
@@ -96,6 +96,6 @@ wineRouter.get("/getbyid", isAuth, wineController.getById)
  *               $ref: "#/components/schemas/Wine"
  */
 
-wineRouter.get("/filter", wineController.wineFilter)
+wineRouter.get("/filter", wineController.wineFilter);
 
-export default wineRouter
+export default wineRouter;

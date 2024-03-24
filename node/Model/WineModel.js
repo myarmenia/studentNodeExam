@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const WineSchema = new mongoose.Schema({
+const WineSchema = new mongoose.Schema(
+  {
     brand: { type: String, required: true },
     name: { type: String, required: true },
     type: { type: String, required: true },
@@ -16,14 +17,10 @@ const WineSchema = new mongoose.Schema({
     price: { type: Number, required: true },
     sales: { type: Number, default: 0 },
     desc: { type: String },
-}, { timestamps: true })
+  },
+  { timestamps: true }
+);
 
-const Wine = mongoose.model("Wine", WineSchema)
+const Wine = mongoose.model("Wine", WineSchema);
 
-
-
-export default Wine
-
-
-
-
+export default Wine;

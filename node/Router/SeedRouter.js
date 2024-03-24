@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { wines } from "../data.js";
 import Wine from "../Model/WineModel.js";
-const seedRouter = Router()
+const seedRouter = Router();
 
 /**
  * @swagger
@@ -23,9 +23,9 @@ const seedRouter = Router()
  */
 
 seedRouter.get("/", async (req, res) => {
-    await Wine.deleteMany({})
-    const wineSeed = await Wine.insertMany(wines)
-    res.status(201).json(wineSeed)
-})
+  await Wine.deleteMany({});
+  const wineSeed = await Wine.insertMany(wines);
+  res.status(201).json(wineSeed);
+});
 
-export default seedRouter
+export default seedRouter;

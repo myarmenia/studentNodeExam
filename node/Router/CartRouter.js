@@ -1,8 +1,8 @@
-import { Router } from 'express';
-import cartController from '../Controller/CartController.js';
-import isAuth from "../Middleware/IsAuth.js"
+import { Router } from "express";
+import cartController from "../Controller/CartController.js";
+import isAuth from "../Middleware/IsAuth.js";
 
-const cartRouter = Router()
+const cartRouter = Router();
 
 /**
  * @swagger
@@ -18,7 +18,7 @@ const cartRouter = Router()
  *      summary: Get all cart items
  *      security:
  *        - bearerAuth: []
- *      tags: 
+ *      tags:
  *        - Cart
  *      responses:
  *        200:
@@ -29,7 +29,7 @@ const cartRouter = Router()
  *                $ref: "#/components/schemas/Cart"
  */
 
-cartRouter.get('/', isAuth, cartController.getCart);
+cartRouter.get("/", isAuth, cartController.getCart);
 
 /**
  * @swagger
@@ -54,34 +54,33 @@ cartRouter.get('/', isAuth, cartController.getCart);
  *                $ref: "#/components/schemas/Cart"
  */
 
-cartRouter.post('/add', isAuth, cartController.addToCart);
+cartRouter.post("/add", isAuth, cartController.addToCart);
 
 /**
-* @swagger
-* /api/cart/updateCart:
-*   put:
-*     summary: Change count of the cart item
-*     security:
-*       - bearerAuth: []
-*     tags: 
-*       - Cart
-*     requestBody:
-*       required: true
-*       content:
-*         application/json:
-*           schema:
-*             $ref: "#/components/request/UpdateCart"
-*     responses:
-*       200:
-*         description: Updated
-*         content:
-*           application/json:
-*             schema:
-*               $ref: "#/components/schemas/Cart"
-*/
+ * @swagger
+ * /api/cart/updateCart:
+ *   put:
+ *     summary: Change count of the cart item
+ *     security:
+ *       - bearerAuth: []
+ *     tags:
+ *       - Cart
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: "#/components/request/UpdateCart"
+ *     responses:
+ *       200:
+ *         description: Updated
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: "#/components/schemas/Cart"
+ */
 
-
-cartRouter.put('/update', isAuth, cartController.updateCart);
+cartRouter.put("/update", isAuth, cartController.updateCart);
 
 /**
  * @swagger
@@ -90,7 +89,7 @@ cartRouter.put('/update', isAuth, cartController.updateCart);
  *     summary: Delete item from subCategory
  *     security:
  *       - bearerAuth: []
- *     tags: 
+ *     tags:
  *       - Cart
  *     requestBody:
  *       required: true
@@ -107,7 +106,6 @@ cartRouter.put('/update', isAuth, cartController.updateCart);
  *               $ref: "#/components/schemas/Cart"
  */
 
+cartRouter.delete("/remove", isAuth, cartController.removeFromCart);
 
-cartRouter.delete('/remove', isAuth, cartController.removeFromCart)
-
-export default cartRouter
+export default cartRouter;
