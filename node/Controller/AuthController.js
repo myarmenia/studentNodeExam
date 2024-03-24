@@ -1,15 +1,6 @@
 import authService from "../Service/AuthService.js";
 const authController = {
-  login: async (req, res) => {
-    try {
-      const { email, password } = req.body;
-      const authUser = await authService.login(email, password);
-      res.status(200).send(authUser);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send({ CriticalError: "Internal Server Error" });
-    }
-  },
+
   register: async (req, res) => {
     try {
       const { name, email, password, cnfPassword } = req.body;
@@ -20,6 +11,16 @@ const authController = {
         cnfPassword
       );
       res.status(201).send(userRegister);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ CriticalError: "Internal Server Error" });
+    }
+  },
+  login: async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      const authUser = await authService.login(email, password);
+      res.status(200).send(authUser);
     } catch (error) {
       console.error(error);
       res.status(500).send({ CriticalError: "Internal Server Error" });

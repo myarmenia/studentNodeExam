@@ -15,7 +15,10 @@ const wineRouter = Router()
  * /api/wine:
  *   get:
  *     summary: Get all Wines
- *     tags: [Wines]
+ *     security:
+ *       - bearerAuth: []
+ *     tags: 
+ *       - Wines
  *     parameters:
  *       - in: query
  *         name: sort
@@ -35,6 +38,7 @@ const wineRouter = Router()
  *             schema:
  *               $ref: "#/components/schemas/Wine"
  */
+
 wineRouter.get("/", wineController.getAll)
 
 /**
@@ -42,7 +46,10 @@ wineRouter.get("/", wineController.getAll)
  * /api/wine/getbyid:
  *   get:
  *     summary: Get Wine by Id
- *     tags: [Wines]
+ *     security:
+ *       - bearerAuth: []
+ *     tags: 
+ *       - Wines
  *     parameters:
  *       - in: query
  *         name: wineId
@@ -57,6 +64,7 @@ wineRouter.get("/", wineController.getAll)
  *             schema:
  *               $ref: "#/components/schemas/Wine"
  */
+
 wineRouter.get("/getbyid", isAuth, wineController.getById)
 
 /**
@@ -64,7 +72,10 @@ wineRouter.get("/getbyid", isAuth, wineController.getById)
  * /api/wine/filter:
  *   get:
  *     summary: Get Wines Based on filter
- *     tags: [Wines]
+ *     security:
+ *       - bearerAuth: []
+ *     tags: 
+ *       - Wines
  *     parameters:
  *       - in: query
  *         name: type
@@ -84,6 +95,7 @@ wineRouter.get("/getbyid", isAuth, wineController.getById)
  *             schema:
  *               $ref: "#/components/schemas/Wine"
  */
+
 wineRouter.get("/filter", wineController.wineFilter)
 
 export default wineRouter

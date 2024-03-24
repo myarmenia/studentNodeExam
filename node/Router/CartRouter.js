@@ -16,15 +16,19 @@ const cartRouter = Router()
  *  /api/cart:
  *    get:
  *      summary: Get all cart items
- *      tags: [Cart]
+ *      security:
+ *        - bearerAuth: []
+ *      tags: 
+ *        - Cart
  *      responses:
  *        200:
  *          description: Success
- *          contents:
+ *          content:
  *            application/json:
  *              schema:
  *                $ref: "#/components/schemas/Cart"
  */
+
 cartRouter.get('/', isAuth, cartController.getCart);
 
 /**
@@ -53,48 +57,56 @@ cartRouter.get('/', isAuth, cartController.getCart);
 cartRouter.post('/add', isAuth, cartController.addToCart);
 
 /**
- * @swagger
- *  /api/cart/updateCart:
- *    put:
- *      summary: Change count of the cart item
- *      tags: [Cart]
- *      requestBody:
- *        required: true
- *        content:
- *          application/json:
- *            schema:
- *              $ref: "#/components/request/UpdateCart"
- *      responses:
- *        200:
- *          description: Updated
- *          contents:
- *            application/json:
- *              schema:
- *                $ref: "#/components/schemas/Cart"
- */
+* @swagger
+* /api/cart/updateCart:
+*   put:
+*     summary: Change count of the cart item
+*     security:
+*       - bearerAuth: []
+*     tags: 
+*       - Cart
+*     requestBody:
+*       required: true
+*       content:
+*         application/json:
+*           schema:
+*             $ref: "#/components/request/UpdateCart"
+*     responses:
+*       200:
+*         description: Updated
+*         content:
+*           application/json:
+*             schema:
+*               $ref: "#/components/schemas/Cart"
+*/
+
 
 cartRouter.put('/update', isAuth, cartController.updateCart);
 
 /**
  * @swagger
- *  /api/cart/removeFromCart:
- *    delete:
- *      summary: Delete item from subCategory
- *      tags: [Cart]
- *      requestBody:
- *        required: true
- *        content:
- *          application/json:
- *            schema:
- *              $ref: "#/components/request/RemoveFromCart"
- *      responses:
- *        204:
- *          description: Deleted
- *          contents:
- *            application/json:
- *              schema:
- *                $ref: "#/components/schemas/Cart"
+ * /api/cart/removeFromCart:
+ *   delete:
+ *     summary: Delete item from subCategory
+ *     security:
+ *       - bearerAuth: []
+ *     tags: 
+ *       - Cart
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: "#/components/request/RemoveFromCart"
+ *     responses:
+ *       204:
+ *         description: Deleted
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: "#/components/schemas/Cart"
  */
+
 
 cartRouter.delete('/remove', isAuth, cartController.removeFromCart)
 

@@ -9,7 +9,7 @@ export const options = {
             version: "1.0.0",
             description: "Student Final Exam: Online Store for Wines"
         },
-        servers: [{ url: "http://195.181.242.194" }],
+        servers: [{ url: "http://195.181.242.194" }, {url: "http://localhost:8080"}],
         components: {
             request: {
                 GetCart: {
@@ -29,7 +29,7 @@ export const options = {
                         count: { type: "string", description: "req.body" }
                     },
                     example: {
-                        wineId: "65faddbee08dde2921d2b518",
+                        wineId: "65fd71bf4e086562994c165b",
                         count: 2
                     }
                 },
@@ -41,18 +41,98 @@ export const options = {
                         count: { type: "string", description: "req.body" }
                     },
                     example: {
-                        wineId: "65faddbee08dde2921d2b518",
+                        wineId: "65fd71bf4e086562994c165b",
                         count: 5
                     }
                 },
-                removeFromCart: {
+                RemoveFromCart: {
                     type: "object",
                     properties: {
                         _id: { type: "string", description: "req.user" },
                         wineId: { type: "string", description: "req.body" },
                     },
                     example: {
-                        wineId: "65faddbee08dde2921d2b518",
+                        wineId: "65fd71bf4e086562994c165b",
+                    }
+                },
+                seedRouter: {
+                    type: "object",
+                    properties: {},
+                    example: {}
+                },
+                GetAll: {
+                    type: "object",
+                    properties: {
+                        sort: { type: "string", description: "Sort wines by a specific attribute." }
+                    },
+                    example: {
+                        sort: "rating"
+                    }
+                },
+                GetById: {
+                    type: "object",
+                    properties: {
+                        wineId: { type: "string", description: "The ID of the wine to retrieve." },
+                        sort: { type: "string", description: "Sort wines by a specific attribute." }
+                    },
+                    example: {
+                        wineId: "65fd71bf4e086562994c165b",
+                        sort: "rating"
+                    }
+                },
+                WineFilter: {
+                    type: "object",
+                    properties: {
+                        types: { type: "array", items: { type: "string" }, description: "Types of wines to filter by." },
+                        brands: { type: "array", items: { type: "string" }, description: "Brands of wines to filter by." }
+                    },
+                    example: {
+                        types: ["dry", "sweet"],
+                        brands: ["brand1", "brand2"]
+                    }
+                },
+                Register: {
+                    type: "object",
+                    properties: {
+                        name: { type: "string", description: "User's name." },
+                        email: { type: "string", description: "User's email address." },
+                        password: { type: "string", description: "User's password." },
+                        cnfPassword: { type: "string", description: "Confirmation of user's password." }
+                    },
+                    example: {
+                        name: "John Doe",
+                        email: "user@example.com",
+                        password: "password123",
+                        cnfPassword: "password123"
+                    }
+                },
+                Login: {
+                    type: "object",
+                    properties: {
+                        email: { type: "string", description: "User's email address." },
+                        password: { type: "string", description: "User's password." }
+                    },
+                    example: {
+                        email: "user@example.com",
+                        password: "password123"
+                    }
+                },
+                refresh: {
+                    type: "object",
+                    properties: {
+                        refreshToken: { type: "string", description: "User's refresh token." }
+                    },
+                    example: {
+                        refreshToken: "your_refresh_token_here"
+                    }
+                },
+                logOut: {
+                    type: "object",
+                    properties: {
+                        email: { type: "string", description: "User's email address." }
+                    },
+                    example: {
+                        email: "user@example.com"
                     }
                 }
             },

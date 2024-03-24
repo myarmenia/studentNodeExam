@@ -1,6 +1,3 @@
-const allowedOrigins = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-];
+const allowedOrigins = ["http://localhost:8080", "http://195.181.242.194", "http://node.trigger.ltd"];
 
 export default allowedOrigins;
