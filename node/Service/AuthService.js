@@ -1,10 +1,12 @@
 import User from "../Model/UserModel.js";
-import Token from "../Model/TokenModel.js";
+import Token from "../Model/TokenModel.js"
 import bcrypt from "bcrypt";
 import Jwt from "jsonwebtoken";
-import { genRefreshToken, genAccessToken } from "../Utils/Token.js";
+import { genRefreshToken, genAccessToken } from "../Utils/Token.js"
+
 
 const authService = {
+
   login: async (email, password) => {
     try {
       const authUser = await User.findOne({ email });
@@ -13,12 +15,12 @@ const authService = {
       }
       if (bcrypt.compareSync(password, authUser.password)) {
         const refreshToken = genRefreshToken(authUser);
-        const accesstoken = genAccessToken(authUser);
+        const accesstoken = genAccessToken(authUser)
 
         await new Token({
           user_id: authUser._id,
-          refreshToken,
-        }).save();
+          refreshToken
+        }).save()
 
         return { accesstoken, refreshToken, message: "login successful" };
       } else {
@@ -58,6 +60,7 @@ const authService = {
   },
 
   refresh: async (refreshToken) => {
+
     console.log(Token);
     const token = await Token.findOne({ refreshToken });
     console.log(token);
@@ -78,11 +81,8 @@ const authService = {
     token.token = newRefreshToken;
     await token.save();
 
-    return {
-      accessToken: newAccessToken,
-      refreshToken: newRefreshToken,
-      message: "Token refreshed successfully",
-    };
+    return { accessToken: newAccessToken, refreshToken: newRefreshToken, message: "Token refreshed successfully" };
+
   },
 
   logOut: async (email) => {
@@ -91,13 +91,15 @@ const authService = {
       if (!user) {
         return { Message: `User not found for email: ${email}` };
       }
-
+  
       await Token.deleteMany({ user_id: user._id });
       return { Message: "Logout successful" };
     } catch (error) {
       console.error(error);
     }
-  },
+  }
+  
+
 };
 
 export default authService;

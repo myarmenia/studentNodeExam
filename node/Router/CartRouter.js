@@ -1,8 +1,8 @@
-import { Router } from "express";
-import cartController from "../Controller/CartController.js";
-import isAuth from "../Middleware/IsAuth.js";
+import { Router } from 'express';
+import cartController from '../Controller/CartController.js';
+import isAuth from "../Middleware/IsAuth.js"
 
-const cartRouter = Router();
+const cartRouter = Router()
 
 /**
  * @swagger
@@ -13,23 +13,28 @@ const cartRouter = Router();
 
 /**
  * @swagger
- *  /api/cart:
- *    get:
- *      summary: Get all cart items
- *      security:
- *        - bearerAuth: []
- *      tags:
- *        - Cart
- *      responses:
- *        200:
- *          description: Success
- *          content:
- *            application/json:
- *              schema:
- *                $ref: "#/components/schemas/Cart"
+ * /api/cart:
+ *   get:
+ *     summary: Get all cart items
+ *     security:
+ *       - bearerAuth: []
+ *     tags: 
+ *       - Cart
+ *     responses:
+ *       200:
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: "#/components/schemas/Cart"
+ *       400:
+ *         description: Bad request, invalid input
+ *       500:
+ *         description: Internal server error
  */
 
-cartRouter.get("/", isAuth, cartController.getCart);
+
+cartRouter.get('/', isAuth, cartController.getCart);
 
 /**
  * @swagger
@@ -38,7 +43,7 @@ cartRouter.get("/", isAuth, cartController.getCart);
  *      summary: Add wine to cart
  *      tags: [Cart]
  *      security:
- *       - bearerAuth: []
+ *        - bearerAuth: []
  *      requestBody:
  *        required: true
  *        content:
@@ -46,51 +51,62 @@ cartRouter.get("/", isAuth, cartController.getCart);
  *            schema:
  *              $ref: "#/components/request/AddToCart"
  *      responses:
- *        201:
- *          description: Created
- *          contents:
+ *        200:
+ *          description: Success
+ *          content:
  *            application/json:
  *              schema:
  *                $ref: "#/components/schemas/Cart"
+ *        400:
+ *          description: Bad request, invalid input
+ *        500:
+ *          description: Internal server error
  */
 
-cartRouter.post("/add", isAuth, cartController.addToCart);
+
+cartRouter.post('/add', isAuth, cartController.addToCart);
 
 /**
  * @swagger
- * /api/cart/updateCart:
- *   put:
- *     summary: Change count of the cart item
- *     security:
- *       - bearerAuth: []
- *     tags:
- *       - Cart
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: "#/components/request/UpdateCart"
- *     responses:
- *       200:
- *         description: Updated
- *         content:
- *           application/json:
- *             schema:
- *               $ref: "#/components/schemas/Cart"
+ *  /api/cart/updateCart:
+ *    put:
+ *      summary: Change count of the cart item
+ *      tags: 
+ *        - Cart
+ *      security:
+ *        - bearerAuth: []
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: "#/components/request/UpdateCart"
+ *      responses:
+ *        200:
+ *          description: Updated
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: "#/components/schemas/Cart"
+ *        400:
+ *          description: Bad request, invalid input
+ *        500:
+ *          description: Internal server error
  */
 
-cartRouter.put("/update", isAuth, cartController.updateCart);
+
+
+cartRouter.put('/update', isAuth, cartController.updateCart);
 
 /**
  * @swagger
  * /api/cart/removeFromCart:
  *   delete:
- *     summary: Delete item from subCategory
+ *     summary: Delete item from cart
+ *     tags: 
+ *       - Cart
  *     security:
  *       - bearerAuth: []
- *     tags:
- *       - Cart
  *     requestBody:
  *       required: true
  *       content:
@@ -98,14 +114,19 @@ cartRouter.put("/update", isAuth, cartController.updateCart);
  *           schema:
  *             $ref: "#/components/request/RemoveFromCart"
  *     responses:
- *       204:
+ *       200:
  *         description: Deleted
  *         content:
  *           application/json:
  *             schema:
  *               $ref: "#/components/schemas/Cart"
+ *       400:
+ *         description: Bad request, invalid input
+ *       500:
+ *         description: Internal server error
  */
 
-cartRouter.delete("/remove", isAuth, cartController.removeFromCart);
 
-export default cartRouter;
+cartRouter.delete('/remove', isAuth, cartController.removeFromCart)
+
+export default cartRouter
