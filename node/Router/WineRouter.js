@@ -51,7 +51,7 @@ wineRouter.get("/", wineController.getAll)
  *     tags: 
  *       - Wines
  *     parameters:
- *       - in: query
+ *       - in: path
  *         name: wineId
  *         schema:
  *           type: string
