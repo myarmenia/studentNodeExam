@@ -63,14 +63,14 @@ const CartService = {
       //   return { Message: "Item not Found" }
       // }
 
-
       console.log("cart.items " + cart);
       await cart.save();
       return { Message: "Item Deleted successfuly" };
-
     }
 
-    return cart.items.length === 0 ? { Message: "Cart empty" } : { Message: "Item not found" }
+    return cart.items.length === 0
+      ? { Message: "Cart empty" }
+      : { Message: "Item not found" };
   },
 };
 

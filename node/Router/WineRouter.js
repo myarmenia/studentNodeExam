@@ -8,7 +8,7 @@ const wineRouter = express.Router();
  * tags:
  *   name: Wines
  *   description: Wines managing APIs
-*/
+ */
 
 /**
  * @swagger
@@ -39,8 +39,7 @@ const wineRouter = express.Router();
  *         description: Internal Server Error. Something went wrong on the server.
  */
 
-wineRouter.get("/getById", wineController.getById)
-
+wineRouter.get("/getById", wineController.getById);
 
 /**
  * @swagger

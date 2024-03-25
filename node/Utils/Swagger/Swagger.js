@@ -79,7 +79,7 @@ export const options = {
           properties: {
             wineId: {
               type: "string",
-              description: "required"
+              description: "required",
             },
           },
           example: {

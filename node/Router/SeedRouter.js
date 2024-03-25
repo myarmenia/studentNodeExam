@@ -10,7 +10,7 @@ seedRouter.get("/", async (req, res) => {
     res.status(201).json(wineSeed);
   } catch (error) {
     console.error(error);
-    res.status(500).send({ CriticalError: "Internal Server Error" })
+    res.status(500).send({ CriticalError: "Internal Server Error" });
   }
 });
 
