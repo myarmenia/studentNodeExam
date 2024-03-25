@@ -66,7 +66,7 @@ cartRouter.post("/add", isAuth, cartController.addToCart);
 
 /**
  * @swagger
- *  /api/cart/updateCart:
+ *  /api/cart/update:
  *    put:
  *      summary: Change count of the cart item
  *      tags:
@@ -96,7 +96,7 @@ cartRouter.put("/update", isAuth, cartController.updateCart);
 
 /**
  * @swagger
- * /api/cart/removeFromCart:
+ * /api/cart/remove:
  *   delete:
  *     summary: Delete item from cart
  *     tags:

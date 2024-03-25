@@ -2,7 +2,7 @@ import Cart from "../Model/CartModel.js";
 
 const CartService = {
   getCart: async (_id) => {
-    const cart = await Cart.findOne({ _id }).populate("items.wineId");
+    const cart = await Cart.findOne({ userId: _id }).populate("items.wineId");
     if (!cart) {
       return { ErrorMessage: "Cart Not Found" };
     }
@@ -20,7 +20,7 @@ const CartService = {
       );
       console.log("existingItem", existingItem);
       if (existingItem) {
-        existingItem.count = count;
+        existingItem.count += count;
       } else {
         cart.items.push({ wineId, count });
       }
@@ -38,7 +38,7 @@ const CartService = {
     }
     console.log("cart" + " " + cart.items);
 
-    const item = cart.items.find((item) => item.wineId.toString() === wineId);
+    const item = cart.items.find((item) => item._id.toString() === wineId);
     console.log("item" + " " + item);
     if (!item) {
       return { ErrorMessage: "Item not found in cart" };
@@ -56,9 +56,21 @@ const CartService = {
       return { ErrorMessage: "Cart not found" };
     }
 
-    cart.items = cart.items.filter((item) => item.wineId.toString() !== wineId);
-    await cart.save();
-    return cart;
+    if (cart.items.find((item) => item._id.toString() === wineId)) {
+      cart.items = cart.items.filter((item) => item._id.toString() !== wineId);
+
+      // if (cart.items.length === 0) {
+      //   return { Message: "Item not Found" }
+      // }
+
+
+      console.log("cart.items " + cart);
+      await cart.save();
+      return { Message: "Item Deleted successfuly" };
+
+    }
+
+    return cart.items.length === 0 ? { Message: "Cart empty" } : { Message: "Item not found" }
   },
 };
 

@@ -1,43 +1,45 @@
 import Wine from "../Model/WineModel.js";
 
 const wineService = {
-  getAll: async (sort) => {
-    const wines = await Wine.find();
-
-    if (sort === "ratingAndOffers") {
-      wines = wines.filter((wine) => wine.rating >= 3 && wine.sales >= 5);
+  getById: async (_id) => {
+    const wine = await Wine.findById(_id);
+    console.log(wine);
+    if (!wine) {
+      return { Message: "Wine Not Found" };
     }
-
-    return wines;
+    return wine;
   },
-  getById: async (wineId, sort) => {
+
+  getAllAndFilter: async (sort, types, brands, minPrice, maxPrice) => {
     try {
-      const wineById = await Wine.findById(wineId);
-      if (!wineById) {
-        return "Wine not found";
+      let query = {};
+
+      if (sort === "ratingAndOffers") {
+        query.rating = { $gte: 3 };
+        query.sales = { $gte: 5 };
       }
 
-      const wines = await Wine.find({ type: wineById.type });
-
-      return { wines, wineById };
-    } catch (error) {
-      console.error(error);
-    }
-  },
-
-  filterWines: async (types, brands) => {
-    try {
-      const query = {};
       if (types && types.length > 0) {
         query.type = { $in: types };
       }
+
       if (brands && brands.length > 0) {
         query.brand = { $in: brands };
       }
+
+      if (minPrice && maxPrice) {
+        query.price = { $gte: minPrice, $lte: maxPrice };
+      } else if (minPrice) {
+        query.price = { $gte: minPrice };
+      } else if (maxPrice) {
+        query.price = { $lte: maxPrice };
+      }
+
       const wines = await Wine.find(query);
       return wines;
     } catch (error) {
       console.error(error);
+      throw error;
     }
   },
 };

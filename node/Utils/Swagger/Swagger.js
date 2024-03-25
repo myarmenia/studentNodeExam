@@ -74,16 +74,12 @@ export const options = {
             sort: "rating",
           },
         },
-        GetById: {
+        WineByID: {
           type: "object",
           properties: {
             wineId: {
               type: "string",
-              description: "The ID of the wine to retrieve.",
-            },
-            sort: {
-              type: "string",
-              description: "Sort wines by a specific attribute.",
+              description: "required"
             },
           },
           example: {

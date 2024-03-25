@@ -4,6 +4,7 @@ const cartController = {
   getCart: async (req, res) => {
     try {
       const { _id } = req.user;
+      console.log(_id);
       const cart = await cartService.getCart(_id);
       res.status(200).send(cart);
     } catch (error) {
