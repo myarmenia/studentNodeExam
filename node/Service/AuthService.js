@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import {
   generateAccessToken,
   generateRefreshToken,
-} from "../Utils/generateToken.js";
+} from "../Utils/GenerateToken.js";
 import Token from "../Model/Token.js";
 
 const AuthService = {
