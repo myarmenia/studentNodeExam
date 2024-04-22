@@ -5,22 +5,21 @@ import Wines from "../Model/Wines.js";
 
 const CartService = {
   getCart: async (user_id) => {
-    const userCart = await Cart.findOne({user_id}).populate({
+    const userCart = await Cart.findOne({ user_id }).populate({
       path: "items.wine_id",
     });
     if (userCart) {
-      if(userCart.items.length > 0){
+      if (userCart.items.length > 0) {
         return { userCart };
-      }else{
-        return {message:"Cart Was Empty",userCart}
+      } else {
+        return { message: "Cart Was Empty", userCart };
       }
     } else {
       return { message: "Cart Not Found" };
     }
   },
   getBoughtItems: async (user_id) => {
-
-    const userBoughtItems = await BoughtItems.findOne({user_id}).populate({
+    const userBoughtItems = await BoughtItems.findOne({ user_id }).populate({
       path: "boughtItems.wine_id",
     });
     if (userBoughtItems) {
@@ -36,11 +35,9 @@ const CartService = {
     ]);
 
     if (user && wine) {
-      const userCart = await Cart.findOne({ user_id })
-
+      const userCart = await Cart.findOne({ user_id });
 
       if (userCart) {
-
         const findItem = userCart.items.find(
           (el) => String(el.wine_id) === String(wine_id)
         );
@@ -56,7 +53,7 @@ const CartService = {
 
           await userCart.save();
 
-          return { message: "Wine Was Added In Cart"}
+          return { message: "Wine Was Added In Cart" };
         } else {
           userCart.items.push({
             wine_id,
@@ -68,7 +65,7 @@ const CartService = {
           await userCart.save();
           const populatedCart = userCart.populate({
             path: "items.wine_id",
-          })
+          });
 
           return { message: "Wine Was Added In Cart" };
         }
@@ -83,8 +80,7 @@ const CartService = {
 
         await Promise.all([newUserCart.save(), user.save()]);
 
-
-        return { message: "Cart Was Created and Wines Was Added in Cart"};
+        return { message: "Cart Was Created and Wines Was Added in Cart" };
       }
     } else {
       return { message: "Invalid Token or Wine ID" };
@@ -94,10 +90,10 @@ const CartService = {
     const user = await Users.findById(user_id);
 
     if (user) {
-      const userCart = await Cart.findOne({ user_id })
+      const userCart = await Cart.findOne({ user_id });
 
       if (userCart && userCart.items.length > 0) {
-        const userBoughtItems = await BoughtItems.findOne({user_id})
+        const userBoughtItems = await BoughtItems.findOne({ user_id });
         if (userBoughtItems) {
           const itemsExist = [];
           userCart.items.map((el) => {
@@ -110,37 +106,38 @@ const CartService = {
 
           if (itemsExist.length > 0) {
             userCart.items.map((el) => {
+              const findItem = userBoughtItems.boughtItems.find(
+                (item) => String(item.wine_id) === String(el.wine_id)
+              );
 
-              const findItem =  userBoughtItems.boughtItems.find((item)=>String(item.wine_id) === String(el.wine_id) )
-
-              if(findItem){
+              if (findItem) {
                 userBoughtItems.boughtItems.map((item) => {
-                  if(String(findItem._id) === String(item._id)){
+                  if (String(findItem._id) === String(item._id)) {
                     item.count = item.count + el.count;
 
-                  userBoughtItems.totalCount =
-                    userBoughtItems.totalCount + el.count;
-                  userBoughtItems.totalSpent =
-                    userBoughtItems.totalSpent + el.wineTotalPrice
+                    userBoughtItems.totalCount =
+                      userBoughtItems.totalCount + el.count;
+                    userBoughtItems.totalSpent =
+                      userBoughtItems.totalSpent + el.wineTotalPrice;
                   }
-                })
-              }else{
+                });
+              } else {
                 userBoughtItems.boughtItems.push({
                   wine_id: el.wine_id,
-                  count: el.count
-                })
+                  count: el.count,
+                });
                 userBoughtItems.totalCount =
                   userBoughtItems.totalCount + el.count;
                 userBoughtItems.totalSpent =
-                  userBoughtItems.totalSpent + el.wineTotalPrice
+                  userBoughtItems.totalSpent + el.wineTotalPrice;
               }
             });
             userCart.totalPrice = 0;
-            userCart.totalCount = 0
+            userCart.totalCount = 0;
             userCart.items = [];
-            await Promise.all([userBoughtItems.save(), userCart.save()])
+            await Promise.all([userBoughtItems.save(), userCart.save()]);
 
-            return {message: "All Items In Cart Were Bought"}
+            return { message: "All Items In Cart Were Bought" };
           } else {
             userBoughtItems.boughtItems.push(...userCart.items);
             userBoughtItems.totalCount =
@@ -153,7 +150,7 @@ const CartService = {
             userCart.totalPrice = 0;
 
             await Promise.all([userBoughtItems.save(), userCart.save()]);
-            return { message: "Wines Were Bought "};
+            return { message: "Wines Were Bought " };
           }
         } else {
           const newUserBoughtItems = new BoughtItems({
@@ -161,7 +158,7 @@ const CartService = {
             boughtItems: userCart.items,
             totalSpent: userCart.totalPrice,
             totalCount: userCart.totalCount,
-          })
+          });
 
           user.boughtItemsId = newUserBoughtItems._id;
 
@@ -176,7 +173,8 @@ const CartService = {
           ]);
 
           return {
-            message: "User Bought Was Created and Wines Were Bought " };
+            message: "User Bought Was Created and Wines Were Bought ",
+          };
         }
       } else {
         return { message: "User Dont Have a Cart or Cart is Empty" };
@@ -185,84 +183,82 @@ const CartService = {
       return { message: "Invalid Token" };
     }
   },
-  changeCount: async (user_id,cartItemId,count,changeType) => {
-    const userCart = await Cart.findOne({user_id})
+  changeCount: async (user_id, cartItemId, count, changeType) => {
+    const userCart = await Cart.findOne({ user_id });
 
-    if(userCart){
-        const findItem = userCart.items.find((el)=> el._id.toString() === cartItemId)
+    if (userCart) {
+      const findItem = userCart.items.find(
+        (el) => el._id.toString() === cartItemId
+      );
 
-        if(findItem){
-          if(changeType == 'increase'){
-            userCart.items.map((el)=>{
-              if(el._id.toString() === cartItemId){
-         
-                  const price = el.wineTotalPrice / el.count
-                  el.count = el.count + 1
-                  el.wineTotalPrice = el.wineTotalPrice +  price
+      if (findItem) {
+        if (changeType == "increase") {
+          userCart.items.map((el) => {
+            if (el._id.toString() === cartItemId) {
+              const price = el.wineTotalPrice / el.count;
+              el.count = el.count + 1;
+              el.wineTotalPrice = el.wineTotalPrice + price;
 
-                  userCart.totalCount = userCart.totalCount + 1
-                  userCart.totalPrice = userCart.totalPrice +  price
-              }
-          })
+              userCart.totalCount = userCart.totalCount + 1;
+              userCart.totalPrice = userCart.totalPrice + price;
+            }
+          });
 
-          await userCart.save()
+          await userCart.save();
 
-          return {message: "Count Has Been Changed"}
-
-          }
-          if(changeType === "decrease"){
-           
-
-            userCart.items.map((el)=>{
-              if(el._id.toString() === cartItemId){
-                  const price = el.wineTotalPrice / el.count
-                  el.count = el.count - count
-                  el.wineTotalPrice = el.wineTotalPrice - (count * price)
-
-                  userCart.totalCount = userCart.totalCount - count
-                  userCart.totalPrice = userCart.totalPrice - (count* price)
-              }
-          })
-
-          await userCart.save()
-
-          return {message: "Count Has Been Changed"}
-
+          return { message: "Count Has Been Changed" };
         }
-        }else{
-            return {message: "Wrong Item ID"}
+        if (changeType === "decrease") {
+          userCart.items.map((el) => {
+            if (el._id.toString() === cartItemId) {
+              const price = el.wineTotalPrice / el.count;
+              el.count = el.count - count;
+              el.wineTotalPrice = el.wineTotalPrice - count * price;
+
+              userCart.totalCount = userCart.totalCount - count;
+              userCart.totalPrice = userCart.totalPrice - count * price;
+            }
+          });
+
+          await userCart.save();
+
+          return { message: "Count Has Been Changed" };
         }
-    }else{
-        return {message: "Inavlid Token"}
+      } else {
+        return { message: "Wrong Item ID" };
+      }
+    } else {
+      return { message: "Inavlid Token" };
     }
   },
-  deleteItem: async (user_id,cartItemId) => {
-    const userCart = await Cart.findOne({user_id})
+  deleteItem: async (user_id, cartItemId) => {
+    const userCart = await Cart.findOne({ user_id });
 
-    if(userCart){
-        const findCartItem = userCart.items.find((el)=> String(el._id) === String(cartItemId))
+    if (userCart) {
+      const findCartItem = userCart.items.find(
+        (el) => String(el._id) === String(cartItemId)
+      );
 
-       if(findCartItem){
-        const newdData = userCart.items.filter((el)=> String(el._id) !== String(cartItemId))
-                userCart.totalPrice = newdData.reduce((a,b)=>{
-                return a + b.wineTotalPrice
-            },0)
-            userCart.totalCount = newdData.reduce((a,b)=>{
-                return a + b.count
-            },0)
+      if (findCartItem) {
+        const newdData = userCart.items.filter(
+          (el) => String(el._id) !== String(cartItemId)
+        );
+        userCart.totalPrice = newdData.reduce((a, b) => {
+          return a + b.wineTotalPrice;
+        }, 0);
+        userCart.totalCount = newdData.reduce((a, b) => {
+          return a + b.count;
+        }, 0);
 
-            userCart.items = newdData
+        userCart.items = newdData;
 
-            await userCart.save()
-            return {message: "Item Hss Been Deleted"}
-
-       }else{
-          return {message:"Item Not Found"}
-       }
-
-
-    }else{
-        return {message: "Invalid Token"}
+        await userCart.save();
+        return { message: "Item Hss Been Deleted" };
+      } else {
+        return { message: "Item Not Found" };
+      }
+    } else {
+      return { message: "Invalid Token" };
     }
   },
 };
