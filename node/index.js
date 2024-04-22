@@ -23,7 +23,7 @@ Connection();
 app.set("view engine", "ejs");
 
 app.use(Credentials);
-app.use(cors(CorsOptions));
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -32,6 +32,7 @@ const __dirname = path.dirname(__filename);
 
 app.set("views", path.join(__dirname, "Views"));
 app.use(express.static(path.join(__dirname, "Public")));
+
 app.use("/api/seed", SeedRouter);
 app.use("/api/wines", WinesRouter);
 app.use("/api/cart", isAuth, CartRouter);
