@@ -1,5 +1,4 @@
-import AllowedOrigins from "./AllowedOrigins.js"
-
+import AllowedOrigins from "./AllowedOrigins.js";
 
 const Credentials = (req, res, next) => {
   const origin = req?.headers?.origin;

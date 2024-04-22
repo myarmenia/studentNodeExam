@@ -16,7 +16,6 @@ const ProductItemPage = () => {
   const { wine } = useSelector((state) => state.productsData);
   const { filteredProducts } = useSelector((state) => state.filterData);
 
-
   useEffect(() => {
     dispatch(getProductByIdThunk(wineId));
     dispatch(filteredProductsThunk({ type: wine.type }));

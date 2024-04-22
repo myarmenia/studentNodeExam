@@ -4,9 +4,9 @@ import offer1 from "../../../Images/Wines/offer_wine_1.png";
 import offer2 from "../../../Images/Wines/offer_wine_2.png";
 import offer3 from "../../../Images/Wines/offer_wine_3.png";
 import offer4 from "../../../Images/Wines/offer_wine_4.png";
-import buyers from '../../../Images/Wines/Buyers.jpg'
+import buyers from "../../../Images/Wines/Buyers.jpg";
 
-const SpecialOffers = ({specialOffersRef}) => {
+const SpecialOffers = ({ specialOffersRef }) => {
   return (
     <div className="container" id="specialoffers" ref={specialOffersRef}>
       <div className="offers">
@@ -40,24 +40,29 @@ const SpecialOffers = ({specialOffersRef}) => {
       </div>
 
       <div className="buyers">
-                <img src={buyers} alt=""/>
-                <div className="buyers_text">
-                    <h2>For international buyers</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in iaculis urna. Sed ultrices
-                        convallis magna in scelerisque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                        posuere cubilia curae; Duis rhoncus sollicitudin urna, eu maximus nisl ultrices eu. Fusce
-                        eleifend nisi eget justo sagittis fringilla. Nullam vel leo nec est laoreet sollicitudin a nec
-                        erat. Phasellus sem ipsum, dapibus eu arcu sed, semper mattis metus. Nunc tempus augue vel neque
-                        maximus dignissim at sed elit. Vestibulum at magna dui. Quisque iaculis sit amet sapien in
-                        vulputate.
-                        Nam ullamcorper mattis nisi faucibus blandit. Nam vehicula nulla vitae purus interdum mattis..
-                        Proin urna urna, ultrices id porta id, interdum id nisi. Integer sed nulla in sem ultricies
-                        volutpat efficitur vel leo. Cras ornare, nulla et bibendum accumsan, leo tellus pellentesque
-                        odio, vel finibus nunc elit.</p>
-                </div>
-            </div>
+        <img src={buyers} alt="" />
+        <div className="buyers_text">
+          <h2>For international buyers</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in
+            iaculis urna. Sed ultrices convallis magna in scelerisque.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+            posuere cubilia curae; Duis rhoncus sollicitudin urna, eu maximus
+            nisl ultrices eu. Fusce eleifend nisi eget justo sagittis fringilla.
+            Nullam vel leo nec est laoreet sollicitudin a nec erat. Phasellus
+            sem ipsum, dapibus eu arcu sed, semper mattis metus. Nunc tempus
+            augue vel neque maximus dignissim at sed elit. Vestibulum at magna
+            dui. Quisque iaculis sit amet sapien in vulputate. Nam ullamcorper
+            mattis nisi faucibus blandit. Nam vehicula nulla vitae purus
+            interdum mattis.. Proin urna urna, ultrices id porta id, interdum id
+            nisi. Integer sed nulla in sem ultricies volutpat efficitur vel leo.
+            Cras ornare, nulla et bibendum accumsan, leo tellus pellentesque
+            odio, vel finibus nunc elit.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default React.memo(SpecialOffers)
+export default React.memo(SpecialOffers);

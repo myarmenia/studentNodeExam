@@ -1,275 +1,289 @@
-.item_page_div{
-    background-color: white;
-    width: 100%;
-    padding-bottom: 30px;
+.item_page_div {
+  background-color: white;
+  width: 100%;
+  padding-bottom: 30px;
 }
-.item_page_div .container{
-    display: flex; 
-    flex-direction: column;
-    gap: 20px;
+.item_page_div .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.item_page_div .container .navigation .lastSpan{
-    color: var(--textColor);
-    font-weight: 600;
+.item_page_div .container .navigation .lastSpan {
+  color: var(--textColor);
+  font-weight: 600;
 }
-.item_page_div .container .item_page_wine{
-    width: 100%;
-    display: flex;
+.item_page_div .container .item_page_wine {
+  width: 100%;
+  display: flex;
 }
-.item_page_div .container .item_page_wine .item_img{
-    width: 40%;
-    display: flex;
-    padding-top: 40px;
-    justify-content: center;
-    max-height: 680px;
+.item_page_div .container .item_page_wine .item_img {
+  width: 40%;
+  display: flex;
+  padding-top: 40px;
+  justify-content: center;
+  max-height: 680px;
 }
-.item_page_div .container .item_page_wine .item_img img{
-    min-width: 45%;
-    max-width: 100%;
-    min-height: 60%;
-    max-height: 80%;
+.item_page_div .container .item_page_wine .item_img img {
+  min-width: 45%;
+  max-width: 100%;
+  min-height: 60%;
+  max-height: 80%;
 }
-.item_page_div .container .item_page_wine .item_info{
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.item_page_div .container .item_page_wine .item_info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.item_page_div .container .item_page_wine .item_info .aside_img{
-    display: none;
+.item_page_div .container .item_page_wine .item_info .aside_img {
+  display: none;
 }
-.item_page_div .container .item_page_wine .item_info .aside_img img{
-    width: 100%;
+.item_page_div .container .item_page_wine .item_info .aside_img img {
+  width: 100%;
 }
-.item_page_div .container .item_page_wine .item_info .item_title h1{
-    font-family: Gabriola;
-    width: 100%;
-    font-size: 56px;
-    font-weight: 600;
-    color: var(--textColor);
+.item_page_div .container .item_page_wine .item_info .item_title h1 {
+  font-family: Gabriola;
+  width: 100%;
+  font-size: 56px;
+  font-weight: 600;
+  color: var(--textColor);
 }
-.item_page_div .container .item_page_wine .item_info .item_about{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.item_page_div .container .item_page_wine .item_info .item_about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.item_page_div .container .item_page_wine .item_info .item_about .item_about_info{
-    display: flex;
-    gap: 80px;
+.item_page_div
+  .container
+  .item_page_wine
+  .item_info
+  .item_about
+  .item_about_info {
+  display: flex;
+  gap: 80px;
 }
-.item_page_div .item_info .item_about .item_about_info ul{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.item_page_div .item_info .item_about .item_about_info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-.item_page_div .item_info .item_about .item_about_info ul li span:nth-child(1){
-    color: var(--mainGray);
-    margin-right: 10px;
+.item_page_div .item_info .item_about .item_about_info ul li span:nth-child(1) {
+  color: var(--mainGray);
+  margin-right: 10px;
 }
-.item_page_div .item_info .item_about_price{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
+.item_page_div .item_info .item_about_price {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
 }
-.item_page_div .item_info .item_about_price button{
-    background-color: var(--textColor);
-    font-family: Futura;
-    color: white;
-    border: 1px solid var(--textColor);
-    cursor: pointer;
-    padding: 10px 35px;
+.item_page_div .item_info .item_about_price button {
+  background-color: var(--textColor);
+  font-family: Futura;
+  color: white;
+  border: 1px solid var(--textColor);
+  cursor: pointer;
+  padding: 10px 35px;
 }
-.item_page_div .item_info .item_about_price button:hover{
-    color: var(--textColor);
-    background-color: white;
+.item_page_div .item_info .item_about_price button:hover {
+  color: var(--textColor);
+  background-color: white;
 }
 .item_page_div .item_info .item_about .price {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .item_page_div .item_info .item_about .price .old_price {
-    display: flex;
-    gap: 10px;
-    min-height: 20px;
+  display: flex;
+  gap: 10px;
+  min-height: 20px;
 }
 
 .item_page_div .item_info .item_about .price .old_price p {
-    font-family: Futura;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-    text-decoration: line-through var(--textColor);
-    position: relative;
+  font-family: Futura;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  text-decoration: line-through var(--textColor);
+  position: relative;
 }
 
 .item_page_div .item_info .item_about .price .old_price span {
-    background-color: var(--secondary);
-    color: white;
-    text-decoration: none;
-    font-family: Futura;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 14px;
-    width: 26px;
-    padding: 1px 3px;
+  background-color: var(--secondary);
+  color: white;
+  text-decoration: none;
+  font-family: Futura;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  width: 26px;
+  padding: 1px 3px;
 }
 
 .item_page_div .item_info .item_about .price .current_price {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .item_page_div .item_info .item_about .price .current_price p {
-    font-family: Futura;
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 27px;
+  font-family: Futura;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 27px;
 }
-.item_page_div .container .item_page_wine .item_desc{
+.item_page_div .container .item_page_wine .item_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.item_page_div .container .item_page_wine .item_desc h4 {
+  font-family: Futura;
+  font-size: 22px;
+  font-weight: 400;
+}
+.item_page_div .container .item_page_wine .item_desc p {
+  font-family: Futura;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--mainGray);
+}
+@media (max-width: 680px) {
+  .item_page_div .container .item_page_wine .item_info {
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .item_page_div .container .item_page_wine .item_img {
+    display: none;
+  }
+  .item_page_div .container .item_page_wine .item_info .aside_img {
+    display: flex;
+    width: 20%;
+  }
+  .item_page_div .container .item_page_wine .item_info .item_title {
+    width: 100%;
+    text-align: center;
+  }
+  .item_page_div .container .item_page_wine .item_info .item_about {
+    width: 70%;
+  }
+  .item_page_div
+    .container
+    .item_page_wine
+    .item_info
+    .item_about
+    .item_about_info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .item_page_div .container .item_page_wine .item_desc {
+    width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  .item_page_div
+    .container
+    .item_page_wine
+    .item_info
+    .item_about
+    .item_about_info {
+    gap: 3px;
     flex-direction: column;
-    gap: 15px;
-
-}
-.item_page_div .container .item_page_wine .item_desc h4{
-    font-family: Futura;
-    font-size: 22px;
-    font-weight: 400;
-}
-.item_page_div .container .item_page_wine .item_desc p{
-    font-family: Futura;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--mainGray);
-}
-@media (max-width:680px) {
-    .item_page_div .container .item_page_wine .item_info{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    .item_page_div .container .item_page_wine .item_img{
-        display: none;
-    }
-    .item_page_div .container .item_page_wine .item_info .aside_img{
-        display: flex;
-        width: 20%;
-    }
-    .item_page_div .container .item_page_wine .item_info .item_title{
-        width: 100%;
-        text-align: center;
-    }
-    .item_page_div .container .item_page_wine .item_info .item_about{
-        width: 70%;
-    }
-    .item_page_div .container .item_page_wine .item_info .item_about .item_about_info{
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-    }
-
-    .item_page_div .container .item_page_wine .item_desc{
-        width: 100%;
-    }
-}
-@media (max-width:540px) {
-    .item_page_div .container .item_page_wine .item_info .item_about .item_about_info{
-        gap: 3px;
-        flex-direction: column;
-    }
-    .item_page_div .container .item_page_wine .item_info .item_title h1{
-        font-size: 36px;
-    }
-    .item_page_div .container .item_page_wine .item_info .aside_img{
-        width: 30%;
-    }
-    .item_page_div .container .item_page_wine .item_info .item_about{
-        width: 60%;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    .item_page_div .item_info .item_about .item_about_info ul{
-        gap: 3px;
-    }
-    .item_page_div .item_info .item_about_price{
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-    }
-    .item_page_div .item_info .item_about .price{
-        gap: 3px;
-    }
-    .item_page_div .item_info .item_about .price .current_price p {
-        font-size: 24px;
-        line-height: 15px;
-    }
-    .item_page_div .item_info .item_about .price .old_price span{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        padding: 0 3px;
-    }
-    .item_page_div .item_info .item_about_price button{
-        padding: 7px 27px;
-    }
+  }
+  .item_page_div .container .item_page_wine .item_info .item_title h1 {
+    font-size: 36px;
+  }
+  .item_page_div .container .item_page_wine .item_info .aside_img {
+    width: 30%;
+  }
+  .item_page_div .container .item_page_wine .item_info .item_about {
+    width: 60%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .item_page_div .item_info .item_about .item_about_info ul {
+    gap: 3px;
+  }
+  .item_page_div .item_info .item_about_price {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .item_page_div .item_info .item_about .price {
+    gap: 3px;
+  }
+  .item_page_div .item_info .item_about .price .current_price p {
+    font-size: 24px;
+    line-height: 15px;
+  }
+  .item_page_div .item_info .item_about .price .old_price span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 0 3px;
+  }
+  .item_page_div .item_info .item_about_price button {
+    padding: 7px 27px;
+  }
 }
 @media (max-width: 410px) {
-    .item_page_div .item_info .item_about_price{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .item_page_div .item_info .item_about .item_about_info ul{
-        align-items: center;
-    }
-    .item_page_div .container .item_page_wine .item_info .item_about{
-        width: 60%;
-    }
-    .item_page_div .container .item_page_wine .item_info .aside_img{
-        width: 34%;
-    }
-    .item_page_div .item_info .item_about .item_about_info ul li{
-        font-size: 12px;
-    }
-    .item_page_div .item_info .item_about .price .old_price span {
-        font-size: 8px;
-    }
-    .item_page_div .item_info .item_about .price .old_price p{
-        font-size: 12px;
-    }
-    .item_page_div .item_info .item_about .price .current_price p{
-        font-size: 18px;
-    }
-    .item_page_div .container .item_page_wine .item_info{
-        gap: 5px;
-    }
+  .item_page_div .item_info .item_about_price {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .item_page_div .item_info .item_about .item_about_info ul {
+    align-items: center;
+  }
+  .item_page_div .container .item_page_wine .item_info .item_about {
+    width: 60%;
+  }
+  .item_page_div .container .item_page_wine .item_info .aside_img {
+    width: 34%;
+  }
+  .item_page_div .item_info .item_about .item_about_info ul li {
+    font-size: 12px;
+  }
+  .item_page_div .item_info .item_about .price .old_price span {
+    font-size: 8px;
+  }
+  .item_page_div .item_info .item_about .price .old_price p {
+    font-size: 12px;
+  }
+  .item_page_div .item_info .item_about .price .current_price p {
+    font-size: 18px;
+  }
+  .item_page_div .container .item_page_wine .item_info {
+    gap: 5px;
+  }
 }
-@media (max-width:360px) {
-    .item_page_div .container .navigation{
-        font-size: 11px;
-    }
-    .item_page_div .container .item_page_wine .item_info .aside_img{
-        width: 40%;
-    }
-    .item_page_div .container .item_page_wine .item_info .item_about{
-        width: 80%;
-    }
-    .item_page_div .container .item_page_wine .item_info{
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-    }
-    .item_page_div .container .item_page_wine .item_info .item_title h1{
-        font-size: 25px;
-    }
+@media (max-width: 360px) {
+  .item_page_div .container .navigation {
+    font-size: 11px;
+  }
+  .item_page_div .container .item_page_wine .item_info .aside_img {
+    width: 40%;
+  }
+  .item_page_div .container .item_page_wine .item_info .item_about {
+    width: 80%;
+  }
+  .item_page_div .container .item_page_wine .item_info {
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .item_page_div .container .item_page_wine .item_info .item_title h1 {
+    font-size: 25px;
+  }
 }

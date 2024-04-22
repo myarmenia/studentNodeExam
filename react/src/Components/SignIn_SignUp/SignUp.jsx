@@ -8,8 +8,8 @@ import { signUpThunk } from "../../Redux/Slices/Auth/authThunks";
 import { setAuthToken } from "../../Utils/accontUtils";
 
 const SignUp = () => {
-  const [message,setMessage] = useState("")
-  const dispatch = useDispatch()
+  const [message, setMessage] = useState("");
+  const dispatch = useDispatch();
 
   const validate = Yup.object().shape({
     password: Yup.string()
@@ -31,35 +31,44 @@ const SignUp = () => {
     confirmPassword: Yup.string()
       .min(8, "Too Short!")
       .max(50, "Too Long!")
-      .oneOf([Yup.ref('password')], 'Your passwords do not match.')
+      .oneOf([Yup.ref("password")], "Your passwords do not match.")
       .matches(/^[a-z0-9A-Z]+$/, "invalid symbols")
       .required("Required"),
   });
 
-  const signUpFunc = async (values)=>{
-    const {payload} = await dispatch(signUpThunk({...values}))
-      setMessage(payload.message)
-      if(payload.message.toLowerCase().includes("successfully")){
-        setTimeout(() => {
-          window.location.href = "/user/signin"
-        }, "2000")
-      }
-  }
-
+  const signUpFunc = async (values) => {
+    const { payload } = await dispatch(signUpThunk({ ...values }));
+    setMessage(payload.message);
+    if (payload.message.toLowerCase().includes("successfully")) {
+      setTimeout(() => {
+        window.location.href = "/user/signin";
+      }, "2000");
+    }
+  };
 
   return (
     <div className="signIn_div">
       <div className="signIn_content">
         <div className="sign_title">Registration</div>
-        {
-          message.length ? <div className={message.toLowerCase().includes("successfully")? "back_ok":"back_err"}>{message}</div>:""
-        }
+        {message.length ? (
+          <div
+            className={
+              message.toLowerCase().includes("successfully")
+                ? "back_ok"
+                : "back_err"
+            }
+          >
+            {message}
+          </div>
+        ) : (
+          ""
+        )}
         <Formik
           initialValues={{
             name: "",
             email: "",
             password: "",
-            confirmPassword:"",
+            confirmPassword: "",
           }}
           onSubmit={(values) => signUpFunc(values)}
           validationSchema={validate}
@@ -133,7 +142,7 @@ const SignUp = () => {
           )}
         </Formik>
         <div className="go_to_signUp">
-        You already have an account? 
+          You already have an account?
           <NavLink to={"/user/signin"}>Login</NavLink>
         </div>
       </div>
@@ -141,4 +150,4 @@ const SignUp = () => {
   );
 };
 
-export default React.memo(SignUp)
+export default React.memo(SignUp);

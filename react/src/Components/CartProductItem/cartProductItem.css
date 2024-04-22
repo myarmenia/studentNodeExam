@@ -1,146 +1,143 @@
-.cart_product_item{
-    display: flex;
+.cart_product_item {
+  display: flex;
+  width: 100%;
+  height: 230px;
+  padding: 18px 85px 18px 25px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--mainGray);
+}
+.cart_product_item .img_div {
+  height: 100%;
+  width: 11%;
+  margin-right: 20px;
+}
+.cart_product_item .img_div img {
+  width: 100%;
+  height: 100%;
+}
+.cart_product_item .product_name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.cart_product_item .product_name h4 {
+  font-family: Gabriola;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--textColor);
+}
+.cart_product_item .product_name p {
+  font-family: Futura;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--mainGray);
+}
+.cart_product_item .product_name p span {
+  font-family: Futura;
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+}
+.cart_product_item .product_price p {
+  font-family: Futura;
+  font-size: 20px;
+  font-weight: 400;
+}
+.cart_product_item .product_quantity {
+  display: flex;
+  gap: 15px;
+}
+.cart_product_item .product_quantity span:nth-child(2) {
+  padding: 2px 7px;
+  cursor: pointer;
+}
+.cart_product_item .product_quantity span:nth-child(3) {
+  border: 1px solid var(--arrowGray);
+  padding: 2px 7px;
+}
+.cart_product_item .product_quantity span:nth-child(4) {
+  padding: 2px 7px;
+  cursor: pointer;
+}
+.cart_product_item .product_total p {
+  font-family: Futura;
+  font-size: 20px;
+  font-weight: 400;
+}
+.cart_product_item .product_edit {
+  cursor: pointer;
+}
+
+.cart_product_item .responsive_title {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .cart_product_item {
+    height: 200px;
+  }
+  .cart_product_item .product_price p {
+    font-size: 15px;
+  }
+  .cart_product_item .product_total p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 700px) {
+  .cart_product_item .product_quantity {
+    gap: 6px;
+  }
+}
+@media (max-width: 600px) {
+  .cart_product_item {
+    flex-direction: column;
     width: 100%;
-    height: 230px;
-    padding: 18px 85px 18px 25px ;
-    justify-content: space-between;
+    height: 530px;
+    padding: 10px;
+    justify-content: center;
+    gap: 15px;
     align-items: center;
     border-bottom: 2px solid var(--mainGray);
-}
-.cart_product_item .img_div{
-    height: 100%;
-    width: 11%;
+  }
+  .cart_product_item .img_div {
+    height: 35%;
+    width: 20%;
+  }
+  .cart_product_item .responsive_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cart_product_item .responsive_div .responsive_title {
+    display: flex;
     margin-right: 20px;
-}
-.cart_product_item .img_div img{
-    width: 100%;
-    height: 100%;
-}
-.cart_product_item .product_name{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-.cart_product_item .product_name h4{
-    font-family: Gabriola;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--textColor);
-}
-.cart_product_item .product_name p{
-    font-family: Futura;
-    font-size: 14px;
-    font-weight: 400;
     color: var(--mainGray);
-}
-.cart_product_item .product_name p span{
-    font-family: Futura ;
-    font-size: 14px;
+    font-family: Futura;
+    font-size: 18px;
     font-weight: 400;
-    color: black;
+  }
+  .cart_product_item .responsive_div p:nth-child(2) {
+    font-size: 18px;
+  }
+  .cart_product_item .product_quantity {
+    gap: 10px;
+  }
+  .cart_product_item .product_name {
+    align-items: center;
+  }
+  .cart_product_item .product_name h4 {
+    font-size: 40px;
+  }
+  .cart_product_item .product_name p {
+    font-size: 18px;
+  }
+  .cart_product_item .product_name p span {
+    font-size: 18px;
+  }
 }
-.cart_product_item .product_price p{
-    font-family: Futura ;
-    font-size: 20px;
-    font-weight: 400;
-   
-}
-.cart_product_item .product_quantity{
-    display: flex;
-    gap: 15px;
-}
-.cart_product_item .product_quantity span:nth-child(2){
-    padding: 2px 7px;
-    cursor: pointer;
-}
-.cart_product_item .product_quantity span:nth-child(3){
-    border: 1px solid var(--arrowGray);
-    padding: 2px 7px;
-}
-.cart_product_item .product_quantity span:nth-child(4){
-    padding: 2px 7px;
-    cursor: pointer;
-}
-.cart_product_item .product_total p{
-    font-family: Futura ;
-    font-size: 20px;
-    font-weight: 400;
-}
-.cart_product_item .product_edit{
-    cursor: pointer;
-}
-
-.cart_product_item .responsive_title{
-    display: none;
-}
-
-
-@media (max-width:800px) {
-    .cart_product_item{
-        height: 200px;
-    }
-    .cart_product_item .product_price p{
-        font-size: 15px;
-    }
-    .cart_product_item .product_total p{
-        font-size: 15px;
-    }
-}
-@media (max-width:700px){
-    .cart_product_item .product_quantity{
-        gap: 6px;
-    }
-}
-@media (max-width:600px){
-    .cart_product_item{
-        flex-direction: column;
-        width: 100%;
-        height: 530px;
-        padding: 10px ;
-        justify-content: center;
-        gap: 15px;
-        align-items: center;
-        border-bottom: 2px solid var(--mainGray);
-    }
-    .cart_product_item .img_div{
-        height: 35%;
-        width: 20%;
-    }
-    .cart_product_item .responsive_div{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .cart_product_item .responsive_div .responsive_title {
-        display: flex;
-        margin-right: 20px;
-        color: var(--mainGray);
-        font-family: Futura;
-        font-size: 18px;
-        font-weight: 400;
-    }
-    .cart_product_item .responsive_div p:nth-child(2){
-        font-size: 18px;
-    }
-    .cart_product_item .product_quantity{
-        gap: 10px;
-    }
-    .cart_product_item .product_name{
-        align-items: center;
-    }
-    .cart_product_item .product_name h4{
-        font-size: 40px;
-    }
-    .cart_product_item .product_name p{
-        font-size: 18px;
-
-    }
-    .cart_product_item .product_name p span{
-        font-size: 18px;
-    }
-}
-@media (max-width:330px) {
-    .cart_product_item .product_name h4{
-        font-size: 25px;
-    }
+@media (max-width: 330px) {
+  .cart_product_item .product_name h4 {
+    font-size: 25px;
+  }
 }

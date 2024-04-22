@@ -7,11 +7,7 @@ const WinesController = {
 
       const page = parseInt(req.query.page) || 1;
       const size = parseInt(req.query.size) || 10;
-      console.log("type ==>", type);
-      console.log("brand ==>", brand);
-      console.log("sort ==>", sort);
-      console.log("page ==>", page);
-      console.log("size ==>", size);
+
       const data = await WinesService.getAll(type, brand, sort, page, size);
 
       res.status(200).send(data);

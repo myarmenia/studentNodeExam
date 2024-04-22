@@ -1,29 +1,29 @@
 import React from "react";
 import "./accountBar.css";
-import {useDispatch, useSelector} from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
 import { changeUserPgaeCurrent } from "../../../Redux/Slices/Filter/FilterSlice";
 import { getRefreshToken, signOut } from "../../../Utils/accontUtils";
 import { signOutThunk } from "../../../Redux/Slices/Auth/authThunks";
 import { setBarIsOpen } from "../../../Redux/Slices/User/UserSlice";
 
-const AccountBar = ({user}) => {
-  const dispatch = useDispatch()
-  const {userPageCurrent} = useSelector((state)=> state.filterData)
-  const {barIsOpen} = useSelector((state)=>state.userData)
+const AccountBar = ({ user }) => {
+  const dispatch = useDispatch();
+  const { userPageCurrent } = useSelector((state) => state.filterData);
+  const { barIsOpen } = useSelector((state) => state.userData);
 
-  const userSignOut = async ()=>{
-    const refresh_token = getRefreshToken()
+  const userSignOut = async () => {
+    const refresh_token = getRefreshToken();
 
-    if(refresh_token){
-      const {payload} = await dispatch(signOutThunk({refresh_token}))
-      signOut()
+    if (refresh_token) {
+      const { payload } = await dispatch(signOutThunk({ refresh_token }));
+      signOut();
     }
-  }
+  };
 
-  const changeCurrent = (name)=>{
-    dispatch(changeUserPgaeCurrent(name))
-    dispatch(setBarIsOpen(false))
-  }
+  const changeCurrent = (name) => {
+    dispatch(changeUserPgaeCurrent(name));
+    dispatch(setBarIsOpen(false));
+  };
 
   return (
     <div className="accountBar">
@@ -35,7 +35,12 @@ const AccountBar = ({user}) => {
         </div>
       </div>
       <div className="account_items">
-        <div className={`account_item  ${userPageCurrent=== "account"? "active_page":""}`} onClick={()=>changeCurrent("account")}>
+        <div
+          className={`account_item  ${
+            userPageCurrent === "account" ? "active_page" : ""
+          }`}
+          onClick={() => changeCurrent("account")}
+        >
           <svg
             width="22"
             height="22"
@@ -57,7 +62,12 @@ const AccountBar = ({user}) => {
           </svg>
           <p>Account</p>
         </div>
-        <div className={`account_item  ${userPageCurrent=== "activeOrders"? "active_page":""}`} onClick={()=> changeCurrent("activeOrders")}>
+        <div
+          className={`account_item  ${
+            userPageCurrent === "activeOrders" ? "active_page" : ""
+          }`}
+          onClick={() => changeCurrent("activeOrders")}
+        >
           <svg
             width="20"
             height="17"
@@ -92,8 +102,12 @@ const AccountBar = ({user}) => {
           </svg>
           <p>Active orders</p>
         </div>
-        <div className={`account_item  ${userPageCurrent=== "orderHistory"? "active_page":""}`}
-        onClick={()=>changeCurrent("orderHistory")}>
+        <div
+          className={`account_item  ${
+            userPageCurrent === "orderHistory" ? "active_page" : ""
+          }`}
+          onClick={() => changeCurrent("orderHistory")}
+        >
           <svg
             width="23"
             height="23"
@@ -122,7 +136,12 @@ const AccountBar = ({user}) => {
           </svg>
           <p>Order history</p>
         </div>
-        <div className={`account_item  ${userPageCurrent=== "payment"? "active_page":""}`} onClick={()=>changeCurrent("payment")}>
+        <div
+          className={`account_item  ${
+            userPageCurrent === "payment" ? "active_page" : ""
+          }`}
+          onClick={() => changeCurrent("payment")}
+        >
           <svg
             width="23"
             height="23"
@@ -143,7 +162,12 @@ const AccountBar = ({user}) => {
           </svg>
           <p>Payment</p>
         </div>
-        <div className={`account_item  ${userPageCurrent=== "support"? "active_page":""}`} onClick={()=>changeCurrent("support")}>
+        <div
+          className={`account_item  ${
+            userPageCurrent === "support" ? "active_page" : ""
+          }`}
+          onClick={() => changeCurrent("support")}
+        >
           <svg
             width="20"
             height="19"
@@ -172,12 +196,12 @@ const AccountBar = ({user}) => {
         </div>
 
         <div className="account_item" onClick={userSignOut}>
-            <i className="fa-solid fa-right-from-bracket"></i>
-            <p>Sign Out</p>
+          <i className="fa-solid fa-right-from-bracket"></i>
+          <p>Sign Out</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default React.memo(AccountBar)
+export default React.memo(AccountBar);

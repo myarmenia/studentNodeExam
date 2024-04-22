@@ -5,7 +5,7 @@ const BoughtItemsSchema = new mongoose.Schema(
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Users",
-      required:true,
+      required: true,
     },
     boughtItems: [
       {

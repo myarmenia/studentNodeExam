@@ -1,15 +1,20 @@
 import React from "react";
-import './orderHistoryItem.css'
+import "./orderHistoryItem.css";
 import { NavLink } from "react-router-dom";
 
-const OrderHistoryItem = ({wine}) => {
-
+const OrderHistoryItem = ({ wine }) => {
   return (
     <div className="activeOrderItem">
       <NavLink to={`/products/${wine.wine_id._id}`} className="img_div">
-        <img src={`${process.env.REACT_APP_HOST}${wine.wine_id.imageUrl}`} alt="" />
+        <img
+          src={`${process.env.REACT_APP_HOST}${wine.wine_id.imageUrl}`}
+          alt=""
+        />
       </NavLink>
-      <NavLink to={`/products/${wine.wine_id._id}`} className="activeOrderItem_name">
+      <NavLink
+        to={`/products/${wine.wine_id._id}`}
+        className="activeOrderItem_name"
+      >
         <h4>{wine.wine_id.title}</h4>
         <p>
           Article <span> &nbsp;&nbsp; {wine.wine_id.article}</span>
@@ -30,4 +35,4 @@ const OrderHistoryItem = ({wine}) => {
   );
 };
 
-export default React.memo(OrderHistoryItem)
+export default React.memo(OrderHistoryItem);

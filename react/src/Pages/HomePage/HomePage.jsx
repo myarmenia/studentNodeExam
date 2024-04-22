@@ -31,7 +31,6 @@ const HomePage = () => {
   const aboutRef = useRef();
   const specialOffersRef = useRef();
 
-
   const { filteredByRating, filteredBySale, activPat, elementLocation } =
     useSelector((state) => state.filterData);
 
@@ -48,7 +47,6 @@ const HomePage = () => {
 
   useEffect(() => {
     if (activPat.id) {
-
       window.scrollTo({
         top: elementLocation[activPat.locationName] - 120,
         behavior: "instant",

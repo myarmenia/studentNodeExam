@@ -1,214 +1,282 @@
-
-.checkout_main_div .ceckout_payment{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-    width: 40%;
-    font-family: Futura;
+.checkout_main_div .ceckout_payment {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  width: 40%;
+  font-family: Futura;
 }
-.checkout_main_div .ceckout_payment h3{
-    font-family: Futura;
-    font-size: 32px;
-    font-weight: 400;
-    color: var(--textColor);
+.checkout_main_div .ceckout_payment h3 {
+  font-family: Futura;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--textColor);
 }
-.checkout_main_div .ceckout_payment .payment_details{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
+.checkout_main_div .ceckout_payment .payment_details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_details_item{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
+.checkout_main_div .ceckout_payment .payment_details .payment_details_item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_details_item h5{
-    font-family: Futura;
-    font-size: 20px;
-    font-weight: 400;
+.checkout_main_div .ceckout_payment .payment_details .payment_details_item h5 {
+  font-family: Futura;
+  font-size: 20px;
+  font-weight: 400;
 }
-.checkout_main_div .ceckout_payment .payment_details .method_radios{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.checkout_main_div .ceckout_payment .payment_details .method_radios {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
-.checkout_main_div .ceckout_payment .payment_details .method_radios .method_radio_item{
-    display: flex;
-    align-items: center;
-    gap: 7px;
+.checkout_main_div
+  .ceckout_payment
+  .payment_details
+  .method_radios
+  .method_radio_item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_cart_namber .cart_namber{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    gap: 15px;
+.checkout_main_div
+  .ceckout_payment
+  .payment_details
+  .payment_cart_namber
+  .cart_namber {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 15px;
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_cart_namber .cart_namber input{
-    width: 89px;
-    height: 33px;
-    outline: none;
-    padding: 3px ;
-    text-align: center;
-    border: 1px solid var(--arrowGray);
+.checkout_main_div
+  .ceckout_payment
+  .payment_details
+  .payment_cart_namber
+  .cart_namber
+  input {
+  width: 89px;
+  height: 33px;
+  outline: none;
+  padding: 3px;
+  text-align: center;
+  border: 1px solid var(--arrowGray);
 }
 input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 10px; 
-    height: 10px;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 50%; 
-    padding: 1px;
-    outline:2px solid; 
-  }
-input[type="radio" i]{
-    color: black;
-
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 1px;
+  outline: 2px solid;
+}
+input[type="radio" i] {
+  color: black;
 }
 input[type="radio"]:checked {
-    background-color: black;
-  }
-
-.checkout_main_div .ceckout_payment .payment_details .payment_name_item{
-    width: 100%;
-}
-.checkout_main_div .ceckout_payment .payment_details .payment_name_item input{
-    width: 100%;
-    height: 33px;
-    padding: 3px 15px;
-    outline: none;
-    border: 1px solid var(--arrowGray);
+  background-color: black;
 }
 
-.checkout_main_div .ceckout_payment .payment_details .payment_date_cvv{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
+.checkout_main_div .ceckout_payment .payment_details .payment_name_item {
+  width: 100%;
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_date{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.checkout_main_div .ceckout_payment .payment_details .payment_name_item input {
+  width: 100%;
+  height: 33px;
+  padding: 3px 15px;
+  outline: none;
+  border: 1px solid var(--arrowGray);
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_date .item_date_inp{
-    display: flex;
-    width: 100%;
-    gap: 15px;
-    justify-content: space-between;
+
+.checkout_main_div .ceckout_payment .payment_details .payment_date_cvv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_date input{
-    width: 89px;
-    height: 33px;
-    outline: none;
-    text-align: center;
-    border: 1px solid var(--arrowGray);
+.checkout_main_div
+  .ceckout_payment
+  .payment_details
+  .payment_date_cvv
+  .item_date {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_cvv{
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
+.checkout_main_div
+  .ceckout_payment
+  .payment_details
+  .payment_date_cvv
+  .item_date
+  .item_date_inp {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  justify-content: space-between;
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_cvv input{
-    width: 89px;
-    height: 33px;
-    outline: none;
-    text-align: center;
-    border: 1px solid var(--arrowGray);
+.checkout_main_div
+  .ceckout_payment
+  .payment_details
+  .payment_date_cvv
+  .item_date
+  input {
+  width: 89px;
+  height: 33px;
+  outline: none;
+  text-align: center;
+  border: 1px solid var(--arrowGray);
 }
-.checkout_main_div .ceckout_payment .payment_details .payment_save{
-    display: flex;
+.checkout_main_div
+  .ceckout_payment
+  .payment_details
+  .payment_date_cvv
+  .item_cvv {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.checkout_main_div
+  .ceckout_payment
+  .payment_details
+  .payment_date_cvv
+  .item_cvv
+  input {
+  width: 89px;
+  height: 33px;
+  outline: none;
+  text-align: center;
+  border: 1px solid var(--arrowGray);
+}
+.checkout_main_div .ceckout_payment .payment_details .payment_save {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.checkout_main_div .ceckout_payment button {
+  width: 138px;
+  height: 40px;
+  background-color: var(--textColor);
+  border: 1px solid var(--textColor);
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+.checkout_main_div .ceckout_payment button:hover {
+  background-color: white;
+  color: var(--textColor);
+}
+.checkout_main_div .ceckout_payment .back_err {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 22px;
+}
+.checkout_main_div .ceckout_payment .back_ok {
+  color: green;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+@media (max-width: 850px) {
+  .checkout_main_div .ceckout_payment {
     align-items: center;
-    gap: 10px;
-}
-.checkout_main_div .ceckout_payment button{
-    width: 138px;
-    height: 40px;
-    background-color: var(--textColor);
-    border: 1px solid var(--textColor);
-    color: white;
+    width: 50%;
+  }
+  .checkout_main_div .ceckout_payment .payment_details {
+    align-items: center;
+  }
+  .checkout_main_div .ceckout_payment .payment_details div {
+    align-items: center;
+  }
+  .checkout_main_div
+    .ceckout_payment
+    .payment_details
+    .payment_cart_namber
+    .cart_namber
+    input {
+    width: 20%;
+  }
+  .checkout_main_div
+    .ceckout_payment
+    .payment_details
+    .payment_date_cvv
+    .item_date {
+    width: 60%;
+    align-items: flex-start;
+  }
+  .checkout_main_div
+    .ceckout_payment
+    .payment_details
+    .payment_date_cvv
+    .item_date
+    input {
+    width: 50%;
+  }
+  .checkout_main_div
+    .ceckout_payment
+    .payment_details
+    .payment_date_cvv
+    .item_cvv {
+    width: 30%;
+    align-items: flex-end;
+    gap: 20px;
+  }
+  .checkout_main_div
+    .ceckout_payment
+    .payment_details
+    .payment_date_cvv
+    .item_cvv
+    input {
+    width: 100%;
+    height: 33px;
     outline: none;
-    cursor: pointer;
+    text-align: center;
+    border: 1px solid var(--arrowGray);
+  }
+  .checkout_main_div
+    .ceckout_payment
+    .payment_details
+    .payment_date_cvv
+    .item_date
+    .item_date_inp {
+    gap: 7px;
+  }
 }
-.checkout_main_div .ceckout_payment button:hover{
-    background-color: white;
-    color: var(--textColor);
+@media (max-width: 500px) {
+  .checkout_main_div .ceckout_payment {
+    width: 90%;
+  }
+  .checkout_main_div .ceckout_payment .payment_details .payment_date_cvv {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .checkout_main_div
+    .ceckout_payment
+    .payment_details
+    .payment_date_cvv
+    .item_cvv {
+    width: 70%;
+    align-items: center;
+    gap: 5px;
+  }
+  .checkout_main_div
+    .ceckout_payment
+    .payment_details
+    .payment_date_cvv
+    .item_date {
+    width: 100%;
+    align-items: center;
+  }
 }
-.checkout_main_div .ceckout_payment .back_err{
-    color: var(--secondary);
-    font-weight: 600;
-    font-size: 22px;
-}
-.checkout_main_div .ceckout_payment .back_ok{
-    color: green;
-    font-weight: 600;
-    font-size: 22px;
-}
-
-
-@media (max-width:850px) {
-    .checkout_main_div .ceckout_payment{
-        align-items: center;
-        width: 50%;
-    }
-    .checkout_main_div .ceckout_payment .payment_details{
-        align-items: center;
-    }
-    .checkout_main_div .ceckout_payment .payment_details div{
-        align-items: center;
-    }
-    .checkout_main_div .ceckout_payment .payment_details .payment_cart_namber .cart_namber input{
-        width: 20%;
-    }
-    .checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_date{
-        width: 60%;
-        align-items: flex-start;
-    }
-    .checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_date input{
-        width: 50%;
-    }
-    .checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_cvv{
-        width: 30%;
-        align-items: flex-end;
-        gap: 20px;
-    }
-    .checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_cvv input{
-        width: 100%;
-        height: 33px;
-        outline: none;
-        text-align: center;
-        border: 1px solid var(--arrowGray);
-    }
-    .checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_date .item_date_inp{
-        gap: 7px;
-    }
-}
-@media (max-width:500px){
-    .checkout_main_div .ceckout_payment{
-        width: 90%;
-    }
-    .checkout_main_div .ceckout_payment .payment_details .payment_date_cvv{
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-    }
-    .checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_cvv{
-        width: 70%;
-        align-items: center;
-        gap: 5px;
-    }
-    .checkout_main_div .ceckout_payment .payment_details .payment_date_cvv .item_date{
-        width: 100%;
-        align-items: center;
-    }
-}
-@media (max-width:390px) {
-    
+@media (max-width: 390px) {
 }

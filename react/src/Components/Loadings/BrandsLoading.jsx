@@ -1,8 +1,8 @@
-import React from "react"
-import ContentLoader from "react-content-loader"
+import React from "react";
+import ContentLoader from "react-content-loader";
 
 const BrandsLoading = (props) => (
-  <ContentLoader 
+  <ContentLoader
     speed={2}
     width={400}
     height={450}
@@ -11,9 +11,9 @@ const BrandsLoading = (props) => (
     foregroundColor="#bfbfbf"
     {...props}
   >
-    <rect x="450" y="101" rx="0" ry="0" width="0" height="1" /> 
+    <rect x="450" y="101" rx="0" ry="0" width="0" height="1" />
     <circle cx="192" cy="237" r="80" />
   </ContentLoader>
-)
+);
 
-export default BrandsLoading
+export default BrandsLoading;

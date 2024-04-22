@@ -1,8 +1,8 @@
 import React from "react";
 import "./title.css";
-import vector from '../../../Images/Vector 1.png'
+import vector from "../../../Images/Vector 1.png";
 
-const Title = ({title}) => {
+const Title = ({ title }) => {
   return (
     <div className="container pop_wines">
       <div className="title">
@@ -16,4 +16,4 @@ const Title = ({title}) => {
   );
 };
 
-export default  React.memo(Title)
+export default React.memo(Title);

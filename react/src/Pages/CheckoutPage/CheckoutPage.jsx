@@ -11,25 +11,22 @@ import { NavLink } from "react-router-dom";
 import { setActivPat } from "../../Redux/Slices/Filter/FilterSlice";
 
 const CheckoutPage = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { cart, loadingStatus } = useSelector((state) => state.cartData);
-  const tax = cart.totalCount * 0.25 || 0
-  
-  useEffect(()=>{
-    dispatch(getCartThunk())
-  },[])
+  const tax = cart.totalCount * 0.25 || 0;
+
+  useEffect(() => {
+    dispatch(getCartThunk());
+  }, []);
 
   window.scrollTo({
     top: 0,
     behavior: "instant",
   });
 
-  const changeActivePath = ()=>{
-    dispatch(setActivPat({title: null,
-    path: null,
-    locationName: null}))
-  }
-  
+  const changeActivePath = () => {
+    dispatch(setActivPat({ title: null, path: null, locationName: null }));
+  };
 
   return (
     <div className="checkoutPgae_div">
@@ -37,8 +34,10 @@ const CheckoutPage = () => {
       <div className="checkout_content">
         <div className="container">
           <div className="navigation">
-          <NavLink to={'/'} onClick={()=>changeActivePath()}>{"Home >"} </NavLink> 
-          <NavLink to={'/cart'}>{"Cart >"} </NavLink> 
+            <NavLink to={"/"} onClick={() => changeActivePath()}>
+              {"Home >"}{" "}
+            </NavLink>
+            <NavLink to={"/cart"}>{"Cart >"} </NavLink>
             <span className="lastSpan">Checkout </span>
           </div>
 
@@ -61,19 +60,19 @@ const CheckoutPage = () => {
               </div>
               <div className="ckeckout_total_amount">
                 <div className="all_boughted_items">
-
-
-                {loadingStatus === "pending" ? (
+                  {loadingStatus === "pending" ? (
                     <div>Loading .... </div>
                   ) : loadingStatus === "rejected" ? (
                     <div>{UNKNOWN_ERROR}</div>
                   ) : cart.items.length === 0 ? (
                     <div className="empty_cart">Cart Was Empty</div>
                   ) : (
-                    cart.items.map((el) => <div className="item_price_div">
-                    <p>{el.wine_id.title}</p>
-                    <p>{el.wineTotalPrice}$</p>
-                  </div>)
+                    cart.items.map((el) => (
+                      <div className="item_price_div">
+                        <p>{el.wine_id.title}</p>
+                        <p>{el.wineTotalPrice}$</p>
+                      </div>
+                    ))
                   )}
 
                   <div className="item_price_div">

@@ -1,13 +1,10 @@
 import { Router } from "express";
 import WinesController from "../Controller/WinesController.js";
 
+const WinesRouter = Router();
 
-const WinesRouter = Router()
+WinesRouter.get("/", WinesController.getAll);
 
-WinesRouter.get("/", WinesController.getAll)
+WinesRouter.get("/:id", WinesController.getById);
 
-WinesRouter.get("/:id", WinesController.getById)
-
-
-
-export default WinesRouter
+export default WinesRouter;

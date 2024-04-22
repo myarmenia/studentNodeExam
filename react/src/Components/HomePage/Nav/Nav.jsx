@@ -4,49 +4,46 @@ import { DataNavBar } from "../../../Constants/constants";
 import { NavLink, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "../../Search/Search";
-import { changeUserPgaeCurrent, setActivPat } from "../../../Redux/Slices/Filter/FilterSlice";
+import {
+  changeUserPgaeCurrent,
+  setActivPat,
+} from "../../../Redux/Slices/Filter/FilterSlice";
 import NavBar from "./NavBar/NavBar";
 import { setSearchValue } from "../../../Redux/Slices/Products/ProductSlice";
 import { getCartThunk } from "../../../Redux/Slices/Cart/cartThunks";
 import { getAccessToken } from "../../../Utils/accontUtils";
 
-
-
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [barIsOpen, setBarIsOpen] = useState(false)
+  const [barIsOpen, setBarIsOpen] = useState(false);
   const location = useLocation();
   const dispatch = useDispatch();
-  const {cart, cartLength} = useSelector((state) => state.cartData);
-  const { activPat} = useSelector((state) => state.filterData);
+  const { cart, cartLength } = useSelector((state) => state.cartData);
+  const { activPat } = useSelector((state) => state.filterData);
 
-  useEffect(()=>{
-    const token = getAccessToken()
-    if(token){
-      dispatch(getCartThunk())
+  useEffect(() => {
+    const token = getAccessToken();
+    if (token) {
+      dispatch(getCartThunk());
     }
-  },[])
-
+  }, []);
 
   const goToBrand = async (obj) => {
-    if(obj.locationName === "support"){
-      await dispatch(changeUserPgaeCurrent("support"))
+    if (obj.locationName === "support") {
+      await dispatch(changeUserPgaeCurrent("support"));
       dispatch(setActivPat(obj));
-    }else{
+    } else {
       dispatch(setActivPat(obj));
     }
-
   };
 
-  const changeActivePath = ()=>{
-    dispatch(setActivPat({title: null,
-    path: null,
-    locationName: null}))
-  }
+  const changeActivePath = () => {
+    dispatch(setActivPat({ title: null, path: null, locationName: null }));
+  };
 
-  barIsOpen ? document.body.style.overflow = "hidden" : document.body.style.overflow = "scroll"  
-
-
+  barIsOpen
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "scroll");
 
   return (
     <nav
@@ -57,33 +54,78 @@ const Nav = () => {
       }}
     >
       <div className="container">
-        <div className="nav_menu" >
-          <div className="bar" onClick={()=>setBarIsOpen(!barIsOpen)} style={{transform: isOpen ? "rotate3d(0, 1, 0, 90deg)":"rotate3d(0,0,0,0deg)"}}>
-            <i className="fa-solid fa-bars" style={{transform:barIsOpen?"rotate(90deg)":"rotate(0deg)"}}></i>
-            <div className="bar_menu_div"  style={{left: barIsOpen?"-140%": "-600px",backgroundColor: location.pathname === '/' ? "rgba(255, 255, 255, 0.603)":"white"}}>
-              <NavBar/>
+        <div className="nav_menu">
+          <div
+            className="bar"
+            onClick={() => setBarIsOpen(!barIsOpen)}
+            style={{
+              transform: isOpen
+                ? "rotate3d(0, 1, 0, 90deg)"
+                : "rotate3d(0,0,0,0deg)",
+            }}
+          >
+            <i
+              className="fa-solid fa-bars"
+              style={{
+                transform: barIsOpen ? "rotate(90deg)" : "rotate(0deg)",
+              }}
+            ></i>
+            <div
+              className="bar_menu_div"
+              style={{
+                left: barIsOpen ? "-140%" : "-600px",
+                backgroundColor:
+                  location.pathname === "/"
+                    ? "rgba(255, 255, 255, 0.603)"
+                    : "white",
+              }}
+            >
+              <NavBar />
             </div>
           </div>
-          <div className="menu" style={{transform: isOpen ? "rotate3d(1, 0, 0, 180deg)":"rotate3d(0,0,0,0deg)"}}>
+          <div
+            className="menu"
+            style={{
+              transform: isOpen
+                ? "rotate3d(1, 0, 0, 180deg)"
+                : "rotate3d(0,0,0,0deg)",
+            }}
+          >
             <ul>
               {DataNavBar.map((item) => (
-                <li key={item.id} onClick={() => goToBrand(item)} className={activPat.title === item.title? "active_page":""}>
+                <li
+                  key={item.id}
+                  onClick={() => goToBrand(item)}
+                  className={activPat.title === item.title ? "active_page" : ""}
+                >
                   <NavLink to={item.path}>{item.title}</NavLink>
                 </li>
               ))}
-              
             </ul>
           </div>
-           <div className="searchBox" style={{transform: isOpen? "rotate3d(0,0,0,0deg)":"rotate3d(1, 0, 0, -90deg)"}}><Search /> <i onClick={() => {
-            setIsOpen(!isOpen) 
-            dispatch(setSearchValue(""))
-            }} className="fa-solid fa-x"></i></div> 
+          <div
+            className="searchBox"
+            style={{
+              transform: isOpen
+                ? "rotate3d(0,0,0,0deg)"
+                : "rotate3d(1, 0, 0, -90deg)",
+            }}
+          >
+            <Search />{" "}
+            <i
+              onClick={() => {
+                setIsOpen(!isOpen);
+                dispatch(setSearchValue(""));
+              }}
+              className="fa-solid fa-x"
+            ></i>
+          </div>
           <div className="navIcons">
             <span
               className="header_icon search_icon"
               onClick={() => {
-                setIsOpen(!isOpen)
-                dispatch(setSearchValue(""))
+                setIsOpen(!isOpen);
+                dispatch(setSearchValue(""));
               }}
             >
               <svg
@@ -110,8 +152,11 @@ const Nav = () => {
               </svg>
             </span>
 
-
-            <NavLink to={"/user/signin"} className="header_icon login_icon" onClick={()=>changeActivePath()}>
+            <NavLink
+              to={"/user/signin"}
+              className="header_icon login_icon"
+              onClick={() => changeActivePath()}
+            >
               <svg
                 width="21"
                 height="21"
@@ -135,7 +180,11 @@ const Nav = () => {
               </svg>
             </NavLink>
 
-            <NavLink to={"/cart"} className="header_icon cart_icon" onClick={()=>changeActivePath()}>
+            <NavLink
+              to={"/cart"}
+              className="header_icon cart_icon"
+              onClick={() => changeActivePath()}
+            >
               <svg
                 width="21"
                 height="21"
@@ -172,7 +221,9 @@ const Nav = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span style={{display:cartLength > 0 ? "flex" : "none"}}>{cartLength}</span>
+              <span style={{ display: cartLength > 0 ? "flex" : "none" }}>
+                {cartLength}
+              </span>
             </NavLink>
           </div>
         </div>

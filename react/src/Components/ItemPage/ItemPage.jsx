@@ -14,7 +14,6 @@ const ItemPage = () => {
   const [data, setData] = React.useState({});
   const dispatch = useDispatch();
 
-
   window.scrollTo({
     top: 0,
     behavior: "instant",
@@ -29,11 +28,9 @@ const ItemPage = () => {
     }
   };
 
-  const changeActivePath = ()=>{
-    dispatch(setActivPat({title: null,
-    path: null,
-    locationName: null}))
-  }
+  const changeActivePath = () => {
+    dispatch(setActivPat({ title: null, path: null, locationName: null }));
+  };
 
   useEffect(() => {
     if (wine.data) {
@@ -41,8 +38,6 @@ const ItemPage = () => {
       setData(wine.data);
     }
   }, [wine]);
-
-
 
   return (
     <div
@@ -59,84 +54,91 @@ const ItemPage = () => {
         ) : wine.wineLoadingStatus === "fulfilled" ? (
           data && (
             <>
-            <div className="navigation">
-                <NavLink to={'/'} onClick={()=>changeActivePath()}>{"Home >"} </NavLink> <NavLink to={'/products'}>{"Products >"}</NavLink> <span className="lastSpan">{data.title}</span>
+              <div className="navigation">
+                <NavLink to={"/"} onClick={() => changeActivePath()}>
+                  {"Home >"}{" "}
+                </NavLink>{" "}
+                <NavLink to={"/products"}>{"Products >"}</NavLink>{" "}
+                <span className="lastSpan">{data.title}</span>
               </div>
-            <div className="item_page_wine">
-              
-              <div className="item_img">
-                <img
-                  src={`${process.env.REACT_APP_HOST}${data.imageUrl}`}
-                  alt=""
-                />
-              </div>
-              <div className="item_info">
-                <div className="item_title">
-                  <h1>{data.title}</h1>
+              <div className="item_page_wine">
+                <div className="item_img">
+                  <img
+                    src={`${process.env.REACT_APP_HOST}${data.imageUrl}`}
+                    alt=""
+                  />
                 </div>
-                <div className="aside_img">
-                  <img src={`${process.env.REACT_APP_HOST}${data.imageUrl}`} alt="" />
-                </div>
-                <div className="item_about">
-                  <div className="item_about_info">
-                    <ul>
-                      <li>
-                        <span>Article</span> <span>{data.article}</span>
-                      </li>
-                      <li>
-                        <span>Country</span> <span>{data.about?.country}</span>
-                      </li>
-                      <li>
-                        <span>Region</span> <span>{data.about?.region}</span>
-                      </li>
-                      <li>
-                        <span>Manufacturer</span>{" "}
-                        <span>{data.about?.manufacturer.name}</span>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li>
-                        <span>Color</span> <span>{data.about?.color}</span>
-                      </li>
-                      <li>
-                        <span>Type</span> <span>{data.type}</span>
-                      </li>
-                      <li>
-                        <span>Volume</span> <span>{data.volume}ml</span>
-                      </li>
-                      <li>
-                        <span>Alcohol</span> <span>{data.alcohol}%</span>
-                      </li>
-                    </ul>
+                <div className="item_info">
+                  <div className="item_title">
+                    <h1>{data.title}</h1>
                   </div>
-                  <div className="item_about_price">
-                    {data.discount ? (
-                      <div className="price">
-                        <div className="old_price">
-                          <p>{data.price}$</p>
-                          <span>{data.discount}%</span>
+                  <div className="aside_img">
+                    <img
+                      src={`${process.env.REACT_APP_HOST}${data.imageUrl}`}
+                      alt=""
+                    />
+                  </div>
+                  <div className="item_about">
+                    <div className="item_about_info">
+                      <ul>
+                        <li>
+                          <span>Article</span> <span>{data.article}</span>
+                        </li>
+                        <li>
+                          <span>Country</span>{" "}
+                          <span>{data.about?.country}</span>
+                        </li>
+                        <li>
+                          <span>Region</span> <span>{data.about?.region}</span>
+                        </li>
+                        <li>
+                          <span>Manufacturer</span>{" "}
+                          <span>{data.about?.manufacturer.name}</span>
+                        </li>
+                      </ul>
+                      <ul>
+                        <li>
+                          <span>Color</span> <span>{data.about?.color}</span>
+                        </li>
+                        <li>
+                          <span>Type</span> <span>{data.type}</span>
+                        </li>
+                        <li>
+                          <span>Volume</span> <span>{data.volume}ml</span>
+                        </li>
+                        <li>
+                          <span>Alcohol</span> <span>{data.alcohol}%</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="item_about_price">
+                      {data.discount ? (
+                        <div className="price">
+                          <div className="old_price">
+                            <p>{data.price}$</p>
+                            <span>{data.discount}%</span>
+                          </div>
+                          <div className="current_price">
+                            <p> {data.price - num} $</p>
+                          </div>
                         </div>
-                        <div className="current_price">
-                          <p> {data.price - num} $</p>
+                      ) : (
+                        <div className="price">
+                          <div className="current_price">
+                            <p> {data.price} $</p>
+                          </div>
                         </div>
-                      </div>
-                    ) : (
-                      <div className="price">
-                        <div className="current_price">
-                          <p> {data.price} $</p>
-                        </div>
-                      </div>
-                    )}
+                      )}
 
-                    <button onClick={addProductToCart}>Add to cart</button>
+                      <button onClick={addProductToCart}>Add to cart</button>
+                    </div>
+                  </div>
+                  <div className="item_desc">
+                    <h4>Description</h4>
+                    <p>{data.description}</p>
                   </div>
                 </div>
-                <div className="item_desc">
-                  <h4>Description</h4>
-                  <p>{data.description}</p>
-                </div>
               </div>
-            </div>
             </>
           )
         ) : (

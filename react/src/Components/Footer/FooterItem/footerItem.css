@@ -45,8 +45,6 @@
   .footer_item {
     width: 40%;
   }
-
-
 }
 
 @media (max-width: 680px) {
@@ -58,15 +56,13 @@
     align-items: center;
     justify-content: center;
   }
-
 }
-@media (max-width:440px) {
+@media (max-width: 440px) {
   .footer_item p {
     font-size: 12px;
   }
-  
+
   .footer_item h3 {
     font-size: 18px;
   }
 }
-

@@ -15,13 +15,11 @@ import { setActivPat } from "../../Redux/Slices/Filter/FilterSlice";
 const CartPage = () => {
   const dispatch = useDispatch();
   const { wines } = useSelector((state) => state.productsData);
-  const { cart,loadingStatus } = useSelector((state) => state.cartData);
+  const { cart, loadingStatus } = useSelector((state) => state.cartData);
 
-  const changeActivePath = ()=>{
-    dispatch(setActivPat({title: null,
-    path: null,
-    locationName: null}))
-  }
+  const changeActivePath = () => {
+    dispatch(setActivPat({ title: null, path: null, locationName: null }));
+  };
 
   window.scrollTo({
     top: 0,
@@ -34,7 +32,9 @@ const CartPage = () => {
       <div className="cartPage_content">
         <div className="container">
           <div className="navigation">
-            <NavLink to={'/'} onClick={()=>changeActivePath()}>{"Home >"} </NavLink> 
+            <NavLink to={"/"} onClick={() => changeActivePath()}>
+              {"Home >"}{" "}
+            </NavLink>
             <span>Cart </span>
           </div>
           <div className="cart_all_items">
@@ -47,21 +47,28 @@ const CartPage = () => {
               <h4>Edit</h4>
             </div>
             <div className="all_items">
-              {loadingStatus === "pending" ? <div className="cart_loading">Loading .... </div> : loadingStatus === "rejected" ? (
+              {loadingStatus === "pending" ? (
+                <div className="cart_loading">Loading .... </div>
+              ) : loadingStatus === "rejected" ? (
                 <div>{UNKNOWN_ERROR}</div>
-              ) : cart ? cart.items.length === 0 ? (
-                <div className="empty_cart">Cart Was Empty</div>
-              ) : 
-                cart.items.map((el) => <CartProductItem wine={el} key={el._id} />)
-              : <div className="empty_cart">Cart Is Empty</div>
-            }
+              ) : cart ? (
+                cart.items.length === 0 ? (
+                  <div className="empty_cart">Cart Was Empty</div>
+                ) : (
+                  cart.items.map((el) => (
+                    <CartProductItem wine={el} key={el._id} />
+                  ))
+                )
+              ) : (
+                <div className="empty_cart">Cart Is Empty</div>
+              )}
             </div>
             <div className="all_totals">
               <div className="all_total_quantity">
                 <p>Total quantity {cart ? cart.totalCount : 0}</p>
               </div>
               <div className="all_total_amount">
-                <p>Total Amount {cart ?cart.totalPrice: 0}$</p>
+                <p>Total Amount {cart ? cart.totalPrice : 0}$</p>
               </div>
             </div>
             <div className="cart_search">

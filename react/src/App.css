@@ -3,28 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
-.App{
+.App {
   width: 100%;
 }
 @font-face {
-  font-family: 'Gabriola';
-  src: url('./Fonts/Gabriola.ttf');
+  font-family: "Gabriola";
+  src: url("./Fonts/Gabriola.ttf");
 }
 
 @font-face {
-  font-family: 'Futura';
-  src: url('./Fonts/FuturaBookBT.ttf');
+  font-family: "Futura";
+  src: url("./Fonts/FuturaBookBT.ttf");
 }
 
 :root {
-  --textColor: #A40D30;
-  --mainGray: #8B8A88;
-  --arrowGray: #CCCCCC;
-  --secondary: #DA3D4E;
+  --textColor: #a40d30;
+  --mainGray: #8b8a88;
+  --arrowGray: #cccccc;
+  --secondary: #da3d4e;
 }
 
 body {
-  background-color: #F4F3F1;
+  background-color: #f4f3f1;
 }
 
 ul {
@@ -39,4 +39,3 @@ a {
   margin: 0 auto;
   padding: 0 20px;
 }
-

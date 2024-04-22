@@ -8,10 +8,10 @@ import { signInThunk } from "../../Redux/Slices/Auth/authThunks";
 import { setAuthToken } from "../../Utils/accontUtils";
 
 const SignIn = () => {
-  const [isRemeber,setIsRemeber] = useState(false)
-  const [message,setMessage] = useState("")
-  const dispatch = useDispatch()
-  const {user} = useSelector((state)=>state.authData)
+  const [isRemeber, setIsRemeber] = useState(false);
+  const [message, setMessage] = useState("");
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.authData);
 
   const validate = Yup.object().shape({
     password: Yup.string()
@@ -27,24 +27,21 @@ const SignIn = () => {
       .matches(/^[a-z0-9A-Z@.]+$/, "invalid symbols"),
   });
 
-  const signinFunc = async (values)=>{
-    const {payload} = await dispatch(signInThunk({...values}))
-    if(payload.access_token){
-      setAuthToken(payload.access_token,payload.refresh_token,isRemeber)
-      window.location.href = "/user/account"
-    }else{
-      setMessage(payload.message)
+  const signinFunc = async (values) => {
+    const { payload } = await dispatch(signInThunk({ ...values }));
+    if (payload.access_token) {
+      setAuthToken(payload.access_token, payload.refresh_token, isRemeber);
+      window.location.href = "/user/account";
+    } else {
+      setMessage(payload.message);
     }
-  }
-
+  };
 
   return (
     <div className="signIn_div">
       <div className="signIn_content">
         <div className="sign_title">Login</div>
-        {
-          message.length ? <div className="back_err">{message}</div>:""
-        }
+        {message.length ? <div className="back_err">{message}</div> : ""}
         <Formik
           initialValues={{
             email: "",
@@ -91,7 +88,11 @@ const SignIn = () => {
               </div>
 
               <div className="remember">
-                <input type="checkbox" onChange={(e)=>setIsRemeber(!isRemeber)}/> <span>Remember Me</span>
+                <input
+                  type="checkbox"
+                  onChange={(e) => setIsRemeber(!isRemeber)}
+                />{" "}
+                <span>Remember Me</span>
               </div>
               <button type="submit" disabled={!isValid}>
                 Login
@@ -103,7 +104,6 @@ const SignIn = () => {
           Don't have an account yet?{" "}
           <NavLink to={"/user/signup"}>Register</NavLink>
         </div>
-
       </div>
     </div>
   );

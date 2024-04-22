@@ -6,14 +6,20 @@ export function signOut() {
 }
 
 export function getAccessToken() {
-  return localStorage.getItem(ACCESS_TOKEN) || sessionStorage.getItem(ACCESS_TOKEN) || "";
+  return (
+    localStorage.getItem(ACCESS_TOKEN) ||
+    sessionStorage.getItem(ACCESS_TOKEN) ||
+    ""
+  );
 }
 
 export function getRefreshToken() {
-  return localStorage.getItem(REFRESH_TOKEN) || sessionStorage.getItem(REFRESH_TOKEN) || "";
+  return (
+    localStorage.getItem(REFRESH_TOKEN) ||
+    sessionStorage.getItem(REFRESH_TOKEN) ||
+    ""
+  );
 }
-
-
 
 export function setAuthToken(accessToken, refreshToken, remember) {
   if (remember) {

@@ -7,18 +7,11 @@ const requireNotAuth = (WrappedComponent) => {
     const navigate = useNavigate();
     const token = getAccessToken();
 
-
-      if (token) {
-       window.location.href = "/user/account"
-
-      }else{
-        return <WrappedComponent {...props} />;
-      }
-    
-      
-
-
-
+    if (token) {
+      window.location.href = "/user/account";
+    } else {
+      return <WrappedComponent {...props} />;
+    }
   };
 };
 
