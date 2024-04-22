@@ -5,4 +5,5 @@ const AllowedOrigins = [
   "http://react.trigger.ltd",
   "http://195.181.242.194",
 ];
+
 export default AllowedOrigins;
