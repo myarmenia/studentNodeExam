@@ -23,7 +23,7 @@ Connection();
 app.set("view engine", "ejs");
 
 app.use(Credentials);
-app.use(cors());
+app.use(cors(CorsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

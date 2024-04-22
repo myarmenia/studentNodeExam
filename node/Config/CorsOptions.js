@@ -1,7 +1,8 @@
-import AllowedOrigins from "./AllowedOrigins.js";
+import AllowedOrigins from "./AllowedOrigins";
 
 const CorsOptions = {
   origin: AllowedOrigins,
+  methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: [
     "Origin",
     "X-Request-With",
