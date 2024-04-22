@@ -61,6 +61,10 @@ nav .container {
 }
 .menu > ul li {
   cursor: pointer;
+  transition: all .5s linear;
+}
+.menu > ul li a{
+  transition: all .5s linear;
 }
 .navIcons {
   display: flex;
@@ -192,7 +196,7 @@ nav .container {
     height: 30px;
   }
   .nav_menu .searchBox i {
-    top: 60%;
+    top: 66%;
     font-size: 15px;
     right: 43%;
   }

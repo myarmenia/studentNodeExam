@@ -25,7 +25,7 @@ const SignUp = () => {
       .matches(/^[a-z0-9A-Z@.]+$/, "invalid symbols"),
     name: Yup.string()
       .required("Required")
-      .min(5, "Too Short!")
+      .min(2, "Too Short!")
       .max(50, "Too Long!")
       .matches(/^[a-zA-Z.]+$/, "invalid symbols"),
     confirmPassword: Yup.string()

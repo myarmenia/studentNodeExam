@@ -46,22 +46,24 @@ const CheckoutPage = () => {
 
             <div className="checkout_all_cart_items">
               <div className="all_items_checkout">
-                <div className="all_items_checkout_overflow">
+
                   {loadingStatus === "pending" ? (
-                    <div>Loading .... </div>
+                    <div className="checkout_load_div" >Loading .... </div>
                   ) : loadingStatus === "rejected" ? (
                     <div>{UNKNOWN_ERROR}</div>
                   ) : cart.items.length === 0 ? (
                     <div className="empty_cart">Cart Was Empty</div>
                   ) : (
-                    cart.items.map((el) => <CheckoutProductItem wine={el} />)
+                    <div className="all_items_checkout_overflow">
+                      {cart.items.map((el) => <CheckoutProductItem wine={el} />)}
+                    </div>
                   )}
-                </div>
+
               </div>
               <div className="ckeckout_total_amount">
                 <div className="all_boughted_items">
                   {loadingStatus === "pending" ? (
-                    <div>Loading .... </div>
+                    <div className="checkout_load_div" >Loading .... </div>
                   ) : loadingStatus === "rejected" ? (
                     <div>{UNKNOWN_ERROR}</div>
                   ) : cart.items.length === 0 ? (

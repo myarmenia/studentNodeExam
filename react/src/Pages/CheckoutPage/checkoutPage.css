@@ -38,6 +38,14 @@
   display: flex;
   gap: 20px;
 }
+.checkout_load_div{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .checkout_main_div
   .checkout_all_cart_items
   .all_items_checkout

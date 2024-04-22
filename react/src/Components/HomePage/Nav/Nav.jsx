@@ -98,7 +98,11 @@ const Nav = () => {
                   onClick={() => goToBrand(item)}
                   className={activPat.title === item.title ? "active_page" : ""}
                 >
-                  <NavLink to={item.path}>{item.title}</NavLink>
+                  <NavLink to={item.path} style={{
+              color: isOpen
+                ? "white"
+                : "black",
+            }}>{item.title}</NavLink>
                 </li>
               ))}
             </ul>

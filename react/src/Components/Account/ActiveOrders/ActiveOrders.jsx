@@ -6,6 +6,7 @@ import { getCartThunk } from "../../../Redux/Slices/Cart/cartThunks";
 import { useLocation } from "react-router-dom";
 import AccountCartLoading from "../../Loadings/AccountCartLoading";
 import { UNKNOWN_ERROR } from "../../../Constants/constants";
+import AccountCartLoadingSec from "../../Loadings/AccountCartLoadingSec";
 
 const ActiveOrders = () => {
   const dispatch = useDispatch();
@@ -24,9 +25,9 @@ const ActiveOrders = () => {
         <h4>Total</h4>
       </div>
       <div className="all_active_orders">
-        {loadingStatus === "pending" ? (
+        {loadingStatus === "pending" ? window.screen.width > "400" ? 
           <AccountCartLoading />
-        ) : loadingStatus === "rejected" ? (
+          : <AccountCartLoadingSec/> : loadingStatus === "rejected" ? (
           <div>{UNKNOWN_ERROR}</div>
         ) : cart ? (
           cart.items.length === 0 ? (

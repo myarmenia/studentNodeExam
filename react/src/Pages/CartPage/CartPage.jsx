@@ -53,7 +53,7 @@ const CartPage = () => {
                 <div>{UNKNOWN_ERROR}</div>
               ) : cart ? (
                 cart.items.length === 0 ? (
-                  <div className="empty_cart">Cart Was Empty</div>
+                  <div className="empty_cart">Cart Is Empty</div>
                 ) : (
                   cart.items.map((el) => (
                     <CartProductItem wine={el} key={el._id} />

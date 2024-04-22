@@ -5,6 +5,7 @@ import OrderHistoryItem from "./OrderHistoryItem/OrderHistoryItem";
 import { getBoughtItems } from "../../../Redux/Slices/Cart/cartThunks";
 import AccountCartLoading from "../../Loadings/AccountCartLoading";
 import { UNKNOWN_ERROR } from "../../../Constants/constants";
+import AccountCartLoadingSec from "../../Loadings/AccountCartLoadingSec";
 
 const OrderHistory = () => {
   const dispatch = useDispatch();
@@ -24,9 +25,9 @@ const OrderHistory = () => {
         <h4>Price</h4>
       </div>
       <div className="all_order_history">
-        {orderHistory.loadingStatus === "pending" ? (
+        {orderHistory.loadingStatus === "pending" ? window.screen.width > "400" ? 
           <AccountCartLoading />
-        ) : orderHistory.loadingStatus === "rejected" ? (
+          : <AccountCartLoadingSec/> : orderHistory.loadingStatus === "rejected" ? (
           <div>{UNKNOWN_ERROR}</div>
         ) : orderHistory.loadingStatus === "fulfilled" && orderHistory.data ? (
           orderHistory.data.boughtItems.length === 0 ? (
