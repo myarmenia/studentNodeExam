@@ -1,0 +1,207 @@
+const winesData = [
+  {
+    title: '"Armenia" rose  wine',
+    imageUrl: "/images/wines/Armenia_rose_sweet.png",
+    article: "000121",
+    about: {
+      country: "Armenia",
+      region: "Vayots Dzor",
+      manufacturer: {
+        name: "Armenia Wine",
+        imageUrl: "/images/manufactorers/Armenia_wine.png",
+      },
+      color: "Rose",
+    },
+    type: "Sweet",
+    volume: 750,
+    alcohol: 55,
+    price:  6.75,
+    rating:  5,
+    sale: 123,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",
+  },
+  {
+    title: '"Koor" red sweet wine',
+    imageUrl: "/images/wines/Koor_red_sweet.jpg",
+    article: "000122",
+    about: {
+      country: "Armenia",
+      region: "Areni",
+      manufacturer: {
+        name: "Koor Ltd",
+        imageUrl: "/images/manufactorers/Koor.jpg",
+      },
+      color: "Red",
+    },
+    type: "Sweet",
+    volume: 750,
+    alcohol: 55,
+    price: 9.5,
+    discount: 10,
+    rating: 4.5,
+    sale: 96,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",
+  },
+  {
+    title: '"Armenia" pomegrante',
+    imageUrl: "/images/wines/Armenia_pomegrante.jpg",
+    article: "000123",
+    about: {
+      country: "Armenia",
+      region: "Vayots Dzor",
+      manufacturer: {
+        name: "Armenia Wine",
+        imageUrl:"/images/manufactorers/Armenia_wine.png",
+      },
+      color: "Red",
+    },
+    type: "Semi-Sweet",
+    volume: 750,
+    alcohol: 55,
+    price:  8.59,
+    discount: 10,
+    rating: 4.3,
+    sale: 115,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",
+  },
+  {
+    title: '"Zorah" white dry wine',
+    imageUrl: "/images/wines/Zorah_white_dry.jpg",
+    article: "000124",
+    about: {
+      country: "Armenia",
+      region: "Vayots Dzor",
+      manufacturer: {
+        name: "Zorah Wines",
+        imageUrl: "/images/manufactorers/Zorah.png",
+      },
+      color: "White",
+    },
+    type: "Dry",
+    volume: 750,
+    alcohol: 30,
+    price: 6.75,
+    rating: 4,
+    sale: 200,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",
+  },
+  {
+    title: '"Tushpa" white wine ',
+    imageUrl: "/images/wines/Tushpa_white.jpg",
+    article: "000125",
+    about: {
+      country: "Armenia",
+      region: "Ararat",
+      manufacturer: {
+        name: "Tushpa Wines",
+        imageUrl : "/images/manufactorers/Tushpa.jpg",
+      },
+      color: "White",
+    },
+    type:"Dry",
+    volume: 750,
+    alcohol: 55,
+    price: 9.5,
+    discount: 10,
+    rating: 4,
+    sale: 176,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",
+  },
+  {
+    title: '"Areni" Qotot red wine',
+    imageUrl: "/images/wines/Areni_qoto_red.png",
+    article: "000126",
+    about: {
+      country: "Armenia",
+      region: "Vayots Dzor",
+      manufacturer: {
+        name: "Vedi Alco",
+        imageUrl: "/images/manufactorers/Vedi_Alco.jpg",
+      },
+      color: "Red",
+    },
+    type: "Dry",
+    volume: 750,
+    alcohol: 30,
+    price:8.595,
+    rating:3.7,
+    sale: 165,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",
+  },
+  {
+    title: '"Karas" red wine ',
+    imageUrl: "/images/wines/Karas_red.jpg",
+    article: "000127",
+    about: {
+      country: "Armenia",
+      region: "Armavir, Arrat Valley",
+      manufacturer: {
+        name: "Karas Wine",
+        imageUrl: "/images/manufactorers/Karas.jpg",
+      },
+      color: "Red",
+    },
+    type: "Dry",
+    volume: 750,
+    alcohol: 50,
+    price:8.59,
+    discount: 10,
+    rating:3.5,
+    sale: 213,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",
+  },
+  {
+    title: '"Armenia" white dry wine',
+    imageUrl: "/images/wines/Armenia_white_dry.png",
+    article: "000128",
+    about: {
+      country: "Armenia",
+      region: "Vayots Dzor",
+      manufacturer: {
+        name: "Armenia Wine",
+        imageUrl:"/images/manufactorers/Armenia_wine.png",
+      },
+      color: "White",
+    },
+    type: "Dry",
+    volume: 750,
+    alcohol: 25,
+    price:9.5,
+    discount: 10,
+    rating: 5,
+    sale: 110,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",
+  },
+  {
+    title: '"Ijevan" Quince white wine ',
+    imageUrl: "/images/wines/Ijevan_white.jpg",
+    article: "000129",
+    about: {
+      country: "Armenia",
+      region: "Tavush",
+      manufacturer: {
+        name: "Ijevan Wine",
+        imageUrl: "/images/manufactorers/Ijevan.png",
+      },
+      color: "White",
+    },
+    type:"Semi-Sweet",
+    volume: 750,
+    alcohol: 15,
+    price: 4.67,
+    rating:3,
+    sale: 88,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",
+  },
+];
+
+export default winesData;

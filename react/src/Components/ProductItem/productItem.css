@@ -1,0 +1,188 @@
+.wine {
+    padding: 20px 30px;
+    background-color: white;
+    gap: 3px;
+    width: 100%;
+    min-height: 400px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.wine .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 300px;
+    border-bottom: 1px solid var(--arrowGray);
+}
+
+.wine .product h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--textColor);
+    text-align: center;
+    font-family: Gabriola;
+}
+
+.wine .product p {
+    font-family: Futura;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--mainGray);
+}
+.wine .product .wine_img_div{
+    width: 100%;
+    min-height: 170px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+.wine .product img {
+    margin: 10px;
+    max-width: 70%;
+    min-height: 140px;
+    max-height: 170px;
+}
+.wine .product .react-stars{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wine .price_buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+
+.wine .price_buy .old_price {
+    display: flex;
+    align-items: center;
+    min-height: 20px;
+}
+
+.wine .price_buy .old_price p {
+    font-family: Futura;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    color: var(--mainGray);
+    text-decoration: line-through var(--textColor);
+    position: relative;
+}
+
+.wine .price_buy .old_price span {
+    background-color: var(--secondary);
+    color: white;
+    text-decoration: none;
+    font-family: Futura;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    width: 26px;
+    padding: 1px 3px;
+}
+
+.wine .price_buy .price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.wine .price_buy .new_price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.wine .price_buy .new_price p {
+    font-family: Futura;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.wine .price_buy .buy {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 20%;
+}
+
+@media (max-width: 1210px) {
+
+    .wine .product h3 {
+        font-size: 20px;
+    }
+}
+@media (max-width: 1075px) {
+
+    .wine h3 {
+        font-size: 20px;
+        line-height: 15px;
+    }
+}
+@media(max-width: 880px) {
+ 
+}
+
+@media(max-width: 680px) {
+    .wine h3 {
+        font-size: 18px;
+    }
+}
+@media (max-width:560px) {
+    .wine .product img {
+        max-width: 150px;
+    }
+}
+@media(max-width: 300px) {
+    .wine .product h3 {
+        font-size: 17px;
+    }
+    .wine .product p{
+        font-size: 10px;
+    }
+    .wine{
+        padding: 7px;
+    }
+    .wine .price_buy .old_price p{
+        font-size: 10px;
+    }
+    .wine .price_buy .old_price span{
+        font-size: 8px;
+        width: auto;
+    }
+    .wine .price_buy .new_price p{
+        font-size: 16px;
+    }
+    .wine .price_buy .buy svg{
+        width: 20px;
+        height: 20px;
+    }
+    .wine{
+        height: 320px;
+        justify-content: space-around;
+        min-height: 300px;
+        max-height: 300px;
+    }
+    .wine .product{
+        justify-content: flex-start;
+        min-height: 70%;
+    }
+    .wine .product .wine_img_div {
+        min-height: 40%;
+    }
+    .wine .product img{
+        min-width: 80%;
+        min-height: 100%;
+    }
+}

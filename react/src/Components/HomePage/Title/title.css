@@ -1,0 +1,35 @@
+.pop_wines {
+  margin-top: 70px;
+  font-family: Gabriola;
+}
+
+.pop_wines .title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  color: var(--textColor);
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.pop_wines .title img {
+  width: 20%;
+}
+
+@media (max-width: 540px) {
+  .pop_wines .title {
+    font-size: 30px;
+    gap: 5px;
+  }
+}
+@media (max-width: 410px) {
+  .pop_wines .title {
+    font-size: 25px;
+    gap: 2px;
+  }
+  .pop_wines .title img {
+    width: 10%;
+  }
+}

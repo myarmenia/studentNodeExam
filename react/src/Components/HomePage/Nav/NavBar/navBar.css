@@ -1,0 +1,26 @@
+.nabBar_mainDiv{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.nabBar_mainDiv>ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    font-family: Gabriola;
+    font-size: 25px;
+    font-weight: 400;
+}
+.nabBar_mainDiv ul .active_page{
+    border-bottom: 1px solid var(--textColor);
+}
+.nabBar_mainDiv>ul li{
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+.nabBar_mainDiv>ul li:hover{
+    border-bottom: 1px solid var(--textColor);
+}

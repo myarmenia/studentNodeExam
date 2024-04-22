@@ -1,0 +1,94 @@
+.contactPage{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contactPage .contact_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.contactPage .contact_container iframe{
+    width:"600px";
+     height:"450px";
+}
+.contactPage .contact_container .contact_items{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+.contactPage .contact_container .contact_items .contact_item{
+    width: 25%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 7px 17px rgb(194, 192, 192);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    border-radius: 10px;
+    font-family: Futura;
+}
+.contactPage .contact_container .contact_items .contact_item .icon_div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.contactPage .contact_container .contact_items .contact_item i{
+    font-size: 50px;
+    color: var(--textColor);
+}
+.contactPage .contact_container .contact_items .contact_item .icon_div h4{
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+
+}
+.contactPage .contact_container .contact_items .contact_item .contact_item_inf{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    color: var(--mainGray);
+}
+@media (max-width:1024px) {
+    .contactPage .contact_container .contact_items{
+        flex-wrap: wrap;
+    }
+    .contactPage .contact_container .contact_items .contact_item{
+        width: 45%;
+    }
+}
+@media (max-width:700px) {
+    .contactPage .contact_container .contact_items{
+        flex-wrap: wrap;
+    }
+    .contactPage .contact_container .contact_items .contact_item{
+        width: 45%;
+    }
+}
+@media (max-width:700px) {
+    .contactPage .contact_container .contact_items{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .contactPage .contact_container .contact_items .contact_item{
+        width: 48%;
+    }
+}
+@media (max-width:470px) {
+    .contactPage .contact_container .contact_items{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .contactPage .contact_container .contact_items .contact_item{
+        width: 85%;
+    }
+}

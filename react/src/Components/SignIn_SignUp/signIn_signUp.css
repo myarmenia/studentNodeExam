@@ -1,0 +1,136 @@
+
+.signIn_div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding-top: 100px;
+    align-items: center;
+}
+
+.signIn_div .signIn_content{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.signIn_div .signIn_content .sign_title{
+    text-align: center;
+    width: 100%;
+    font-family: Gabriola;
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--textColor);
+}
+.signIn_div .signIn_content  .signIn_form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.signIn_div .signIn_content  .signIn_form .form_inp{
+    width: 70%;
+    font-family: Futura;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+.signIn_div .signIn_content  .signIn_form .form_inp input{
+    width: 100%;
+    font-family: Futura;
+    width: Fixed (400px)px;
+    height: Hug (46px)px;
+    padding: 12px 16px 12px 16px;
+    gap: 10px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+
+}
+.signIn_div .signIn_content  .signIn_form .form_inp p{
+    padding: 7px;
+    color: var(--secondary);
+}
+.signIn_div .signIn_content  .signIn_form .remember{
+    font-family: Futura;
+}
+.signIn_div .signIn_content  .signIn_form .remember input[type="checkbox"] {
+    background-color: #472f2f; 
+    border-color: #e70707;
+    width: 15px;
+    height: 15px;
+}
+
+.signIn_div .signIn_content  .signIn_form .remember input[type="checkbox"]:checked::before {
+    content: "\2713"; 
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 900;
+    color: var(--textColor);
+    border: 1px solid var(--textColor);
+    background-color: rgb(255, 255, 255);
+}
+
+.signIn_div .signIn_content  .signIn_form button{
+    width: 165px;
+    height: Hug (40px)px;
+    padding: 9px 10px 9px 10px;
+    gap: 10px;
+    background-color: var(--textColor);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.signIn_div .signIn_content  .signIn_form button:disabled{
+    background-color: #472f2f73;
+    pointer-events: none;
+}
+.signIn_div .signIn_content  .go_to_signUp{
+    text-align: center;
+    font-family: Futura;
+}
+.signIn_div .signIn_content  .go_to_signUp a{
+    color: var(--textColor);
+    cursor: pointer;
+}
+.signIn_div .signIn_content .back_err{
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+.signIn_div .signIn_content .back_ok{
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(21, 175, 21);
+}
+@media (max-width:1280px) {
+    .signIn_div{
+        padding-top: 0;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (max-width:1024px) {
+    .signIn_div{
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        align-items: center;
+    }
+}
+@media (max-width: 460px) {
+    .signIn_div .signIn_content{
+        width: 100%;
+        gap: 15px;
+    }
+}

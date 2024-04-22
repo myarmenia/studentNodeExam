@@ -1,0 +1,19 @@
+article{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    padding: 0;
+    padding-bottom: 100px;
+}
+.middle_bg {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.middle_bg>img{
+    width: 100%;
+    min-height: 130px;
+}

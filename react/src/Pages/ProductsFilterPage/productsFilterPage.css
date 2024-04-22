@@ -1,0 +1,151 @@
+.products_filter_page .products_container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0 20px;
+    margin-top: 25px;
+}
+
+.products_filter_page .container .navigation span:nth-child(2){
+    color: var(--textColor);
+    font-weight: 600;
+}
+.products_filter_page .products_container .products_filter_content .products_filter_icon{
+    width: 10%;
+
+    position: relative;
+    display: none;
+}
+
+.products_filter_page .products_container .products_filter_content .products_filter_icon .filters_price{
+    width: 80%;
+
+}
+
+.products_filter_page .products_container .products_filter_content .products_filter_icon .filters_price input{
+    width: 100px;
+}
+.products_filter_page .products_container .products_filter_content .filters_price .price_range span:nth-child(2){
+    padding: 5px;
+}
+
+
+
+
+
+
+.products_filter_page .products_container .products_filter_content .products_filter_icon img{
+    width: 100%;
+    transition: all .4s linear;
+}
+.products_filter_page .products_container .products_filter_content{
+    display: flex;
+    gap: 40px;
+}
+
+.products_filter_page .products_container .products_filter_content .products_filters{
+    width: 20%;
+}
+.products_filter_page .products_container .products_filter_content .products_items{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.products_filter_page .products_container .products_filter_content .products_items .wine_item_div{
+    width: 30%;
+
+}
+.products_filter_page .products_container .products_filter_content .products_items .err_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: var(--secondary);
+}
+
+.products_filter_page .products_container .products_filter_content .products_filter_bar{
+    position: absolute;
+    background-color: white;
+    left: 0;
+    top: 100%;
+    width: 90vw;
+    overflow-y: scroll;
+    height: 400px;
+    box-shadow: 0 7px 17px rgb(207, 205, 205);
+    padding: 10px 10px 20px 10px;
+    z-index: 60;
+}
+@media (max-width:1000px) {
+    .products_filter_page .products_container .products_filter_content .products_items .wine_item_div .wine h3{
+        font-size: 20px;
+        line-height: normal;
+    }
+
+}
+@media (max-width:900px) {
+    .products_filter_page .products_container .products_filter_content .products_items .wine_item_div {
+        width: 44%;
+    }
+
+}
+@media (max-width:680px) {
+    .products_filter_page .products_container .products_filter_content .products_items{
+        flex-direction: column;
+        align-items: center;
+    }
+    .products_filter_page .products_container .products_filter_content .products_items .wine_item_div {
+        width: 70%;
+    }
+    .products_filter_page .products_container .products_filter_content .products_filters{
+        width: 30%;
+    }
+    .products_filter_page .products_container .products_filter_content .products_items{
+        width: 80%;
+    }
+
+}
+@media (max-width:550px) {
+    .products_filter_page .products_container .products_filter_content .products_items .wine_item_div {
+        width: 90%;
+    }
+    .products_filter_icon{
+        display: flex;
+    }
+
+}
+@media (max-width:500px){
+    .products_filter_page .products_container .products_filter_content{
+        flex-direction: column;
+    }
+    .products_filter_page .products_container .products_filter_content .products_filters{
+        display: none;
+    }
+    .products_filter_page .products_container .products_filter_content .products_items{
+        width: 100%;
+    }
+    .products_filter_page .products_container .products_filter_content .products_filter_icon{
+        display: flex;
+    }
+}
+@media (max-width:300px){
+    .products_filter_page .products_container .products_filter_content .products_items .wine_item_div .wine {
+        height: 380px;
+    }
+    .products_filter_page .products_container .products_filter_content .products_items .wine_item_div .wine h3 {
+        font-size: 20px;
+    }
+    .products_filter_page .products_container .products_filter_content .products_items .wine_item_div .wine .wine_img_div {
+        height: 150px;
+    }
+    .products_filter_page .products_container .products_filter_content .products_items .wine_item_div .wine .wine_img_div img {
+        height: 120px;
+    }
+    .products_filter_page .products_container .products_filter_content .products_items .wine_item_div .wine .product{
+        min-height: 80%;
+    }
+
+}
