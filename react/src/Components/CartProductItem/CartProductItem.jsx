@@ -13,6 +13,8 @@ const CartProductItem = ({wine}) => {
         const newCount  =1
         const {payload} = await dispatch(changeCartItemCount({count:newCount,cartItemId: wine._id, changeType:"increase"}))
         dispatch(getCartThunk())
+        dispatch(changeCartItemCount())
+
     }
 
 
@@ -21,15 +23,20 @@ const CartProductItem = ({wine}) => {
         if(newCount < 1){
             const {payload} = await dispatch(deleteCartItem({cartItemId:wine._id}))
             dispatch(getCartThunk())
+            dispatch(changeCartItemCount())
         }else{
             const {payload} = await dispatch(changeCartItemCount({count:1,cartItemId: wine._id,changeType:"decrease"}))
             dispatch(getCartThunk())
+            dispatch(changeCartItemCount())
+
         }
     }
 
     const removeCartItem = async()=>{
         const {payload} = await dispatch(deleteCartItem({cartItemId:wine._id}))
         dispatch(getCartThunk())
+        dispatch(changeCartItemCount())
+
     }
 
   return (

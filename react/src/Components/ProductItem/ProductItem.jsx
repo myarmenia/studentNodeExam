@@ -5,6 +5,7 @@ import ReactStars from "react-rating-stars-component";
 import { NavLink } from "react-router-dom";
 import {addToCartThunk} from '../../Redux/Slices/Cart/cartThunks'
 import { getAccessToken } from "../../Utils/accontUtils";
+import { changeCartLength } from "../../Redux/Slices/Cart/CartSlice";
 
 
 
@@ -17,6 +18,7 @@ const ProductItem = ({wine}) => {
     const token = getAccessToken()
     if(token){
       dispatch(addToCartThunk({wine_id:wine._id}))
+      dispatch(changeCartLength())
     }else{
       window.location.href = "/user/signin"
     }

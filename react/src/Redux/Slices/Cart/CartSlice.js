@@ -8,6 +8,7 @@ const initialState = {
         data: [],
         loadingStatus: "pending"
     },
+    cartLength: 0,
     loadingStatus: "pending"
 }
 
@@ -17,6 +18,9 @@ const CartSlice = createSlice({
     reducers:{
         changeCart(state,action){
             state.cart = action.payload
+        },
+        changeCartLength(state,{payload}){
+            state.cartLength = state.cartLength + 1
         }
     },
     extraReducers: (builder)=>{
@@ -27,6 +31,7 @@ const CartSlice = createSlice({
         .addCase(getCartThunk.fulfilled, (state,action)=>{
             state.loadingStatus = "fulfilled"
             state.cart = action.payload.userCart
+            state.cartLength = action.payload.userCart.totalCount
         })
         .addCase(getCartThunk.rejected, (state,action)=>{
             state.loadingStatus = "rejected"
@@ -48,6 +53,6 @@ const CartSlice = createSlice({
 })
 
 
-export const {changeCart} = CartSlice.actions
+export const {changeCart, changeCartLength} = CartSlice.actions
 
 export default CartSlice.reducer

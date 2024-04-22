@@ -1,9 +1,9 @@
 const AllowedOrigins = [
     "http://localhost:3000",
-    "http://localhost:3001",
-    "http://localhost:5000",
-    "http://localhost:6000",
     "http://localhost:8080",
+    "http://node.trigger.ltd",
+    "http://react.trigger.ltd",
+
 ]
 
 export default AllowedOrigins

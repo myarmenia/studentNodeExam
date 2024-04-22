@@ -17,9 +17,6 @@ const CartPage = () => {
   const { wines } = useSelector((state) => state.productsData);
   const { cart,loadingStatus } = useSelector((state) => state.cartData);
 
-  useEffect(() => {
-    dispatch(getCartThunk());
-  }, []);
   const changeActivePath = ()=>{
     dispatch(setActivPat({title: null,
     path: null,

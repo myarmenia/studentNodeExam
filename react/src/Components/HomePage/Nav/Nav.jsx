@@ -17,7 +17,7 @@ const Nav = () => {
   const [barIsOpen, setBarIsOpen] = useState(false)
   const location = useLocation();
   const dispatch = useDispatch();
-  const {cart} = useSelector((state) => state.cartData);
+  const {cart, cartLength} = useSelector((state) => state.cartData);
   const { activPat} = useSelector((state) => state.filterData);
 
   useEffect(()=>{
@@ -25,7 +25,8 @@ const Nav = () => {
     if(token){
       dispatch(getCartThunk())
     }
-  },[cart])
+  },[])
+
 
   const goToBrand = async (obj) => {
     if(obj.locationName === "support"){
@@ -45,7 +46,7 @@ const Nav = () => {
 
   barIsOpen ? document.body.style.overflow = "hidden" : document.body.style.overflow = "scroll"  
 
-  const cartLength = cart?.items?.length ? cart.items.length : ""
+
 
   return (
     <nav
@@ -171,7 +172,7 @@ const Nav = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span style={{display:cartLength? "flex" : "none"}}>{cartLength}</span>
+              <span style={{display:cartLength > 0 ? "flex" : "none"}}>{cartLength}</span>
             </NavLink>
           </div>
         </div>
