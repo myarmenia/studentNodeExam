@@ -5,10 +5,7 @@ const CheckoutProductItem = ({ wine }) => {
   return (
     <div className="checkout_product_item">
       <div className="img_div">
-        <img
-          src={`${process.env.REACT_APP_HOST}${wine.wine_id.imageUrl}`}
-          alt=""
-        />
+        <img src={`${wine.wine_id.imageUrl}`} alt="" />
       </div>
       <div className="checkout_product_item_info">
         <h3>{wine.wine_id.title}</h3>

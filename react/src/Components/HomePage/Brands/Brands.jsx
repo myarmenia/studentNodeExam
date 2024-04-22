@@ -36,10 +36,7 @@ const Brands = ({ brandsRef, brandsSettings }) => {
         <Slider {...brandsSettings}>
           {brands.length
             ? brands.map((brand, idx) => (
-                <img
-                  src={`${process.env.REACT_APP_HOST}${brand.imageUrl}`}
-                  key={idx}
-                />
+                <img src={`${brand.imageUrl}`} key={idx} alt="" />
               ))
             : load}
         </Slider>

@@ -29,10 +29,7 @@ const ProductItem = ({ wine }) => {
           Alc {wine.alcohol}% 0.${wine.volume}l
         </p>
         <div className="wine_img_div">
-          <img
-            src={`${process.env.REACT_APP_HOST}${wine.imageUrl}`}
-            alt="Wine"
-          />
+          <img src={`${wine.imageUrl}`} alt="Wine" />
         </div>
         <ReactStars
           count={5}

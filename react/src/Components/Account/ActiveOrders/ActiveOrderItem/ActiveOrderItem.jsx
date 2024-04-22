@@ -6,10 +6,7 @@ const ActiveOrderItem = ({ wine }) => {
   return (
     <div className="activeOrderItem">
       <NavLink to={`/products/${wine.wine_id._id}`} className="img_div">
-        <img
-          src={`${process.env.REACT_APP_HOST}${wine.wine_id.imageUrl}`}
-          alt=""
-        />
+        <img src={`${wine.wine_id.imageUrl}`} alt="" />
       </NavLink>
       <NavLink
         to={`/products/${wine.wine_id._id}`}

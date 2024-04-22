@@ -56,10 +56,7 @@ const CartProductItem = ({ wine }) => {
   return (
     <div className="cart_product_item">
       <NavLink to={`/products/${wine.wine_id._id}`} className="img_div">
-        <img
-          src={`${process.env.REACT_APP_HOST}${wine.wine_id.imageUrl}`}
-          alt=""
-        />
+        <img src={`${wine.wine_id.imageUrl}`} alt="" />
       </NavLink>
       <NavLink to={`/products/${wine.wine_id._id}`} className="product_name">
         <h4>{wine.wine_id.title}</h4>

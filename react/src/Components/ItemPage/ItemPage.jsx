@@ -63,20 +63,14 @@ const ItemPage = () => {
               </div>
               <div className="item_page_wine">
                 <div className="item_img">
-                  <img
-                    src={`${process.env.REACT_APP_HOST}${data.imageUrl}`}
-                    alt=""
-                  />
+                  <img src={`${data.imageUrl}`} alt="" />
                 </div>
                 <div className="item_info">
                   <div className="item_title">
                     <h1>{data.title}</h1>
                   </div>
                   <div className="aside_img">
-                    <img
-                      src={`${process.env.REACT_APP_HOST}${data.imageUrl}`}
-                      alt=""
-                    />
+                    <img src={`${data.imageUrl}`} alt="" />
                   </div>
                   <div className="item_about">
                     <div className="item_about_info">
